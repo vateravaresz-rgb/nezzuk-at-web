@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ==========================================
-       NÉZZÜK ÁT! - COMPREHENSIVE AUTO STYLING FINAL
+       NÉZZÜK ÁT! - COMPREHENSIVE AUTO STYLING UNIFIED
        ========================================== */
     :root {
         --bg-main: #0b0d11;
@@ -110,7 +110,7 @@
 
     /* ABOUT SZEKCIÓ */
     .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-    .about-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .about-image img { width: 100%; height: auto; border-radius: 16px; border: 2px solid var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.5); background: #14171f; padding: 0.5rem; }
     .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
     .warning-box { background: rgba(255, 106, 0, 0.04); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
     .warning-title { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -127,12 +127,15 @@
     .checklist-card ul li i { color: var(--accent); margin-top: 0.3rem; font-size: 0.85rem; }
     .checklist-card ul li strong { color: rgba(255,255,255,0.9); }
 
-    /* EXPERT GRID BLOCKS FOR IMAGES */
+    /* EXPERT GRID BLOCKS FOR MOTOR SPECIFICATION */
     .expert-grid-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
     .expert-grid-block.reverse { grid-template-columns: 1fr 1.2fr; }
     .expert-text-side h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.2rem; text-transform: uppercase; color: var(--white); }
     .expert-text-side p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.95rem; }
-    .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+    .expert-text-side ul { list-style: none; }
+    .expert-text-side ul li { color: var(--text-muted); margin-bottom: 0.6rem; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; }
+    .expert-text-side ul li i { color: var(--accent); margin-top: 0.35rem; font-size: 0.85rem; }
+    .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 2px solid var(--accent); box-shadow: 0 15px 30px rgba(0,0,0,0.4); background: #14171f; padding: 0.5rem; }
 
     /* SZOLGÁLTATÁSOK & ÁRAK & VÉLEMÉNYEK */
     .service-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
@@ -195,9 +198,9 @@
       <ul class="nav-links">
         <li><a href="#about">Bemutatkozás</a></li>
         <li><a href="#checklist">Mit nézünk át?</a></li>
+        <li><a href="#specification">Típusismeret</a></li>
         <li><a href="#services">Szolgáltatások</a></li>
         <li><a href="#prices">Árak</a></li>
-        <li><a href="#expertise">Tapasztalat</a></li>
         <li><a href="#testimonials">Vélemények</a></li>
         <li><a href="#contact">Kapcsolat</a></li>
       </ul>
@@ -224,22 +227,22 @@
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-car-on"></i></div>
         <div>
-          <h3>Helyszíni vizsgálat</h3>
-          <p>Kereskedésbe vagy house-hoz megyek, ott végzem a felmérést.</p>
+          <h3>Helyszíni állapotfelmérés</h3>
+          <p>Kereskedésbe vagy házhoz megyek, ott végzem a felmérést.</p>
         </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-list-check"></i></div>
         <div>
-          <h3>Komplex felmérés</h3>
-          <p>Több tucat kritikus pont részletes, fizikai és szoftveres ellenőrzése.</p>
+          <h3>Komplex ellenőrzés</h3>
+          <p>Több tucat kritikus pont részletes, fizikai és szoftveres átnézése.</p>
         </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
-          <h3>Kizárólag neked</h3>
-          <p>Független szakértőként vagyok ott, az eladótól teljesen különállva.</p>
+          <h3>Független szakértelem</h3>
+          <p>Nem állok kapcsolatban eladókkal, kizárólag a te érdeked nézem.</p>
         </div>
       </div>
     </div>
@@ -254,8 +257,8 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <!-- JAVÍTOTT: Most már egy működő, stabil online URL hivatkozik a diagnosztikai fotóra -->
-          <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d84d?auto=format&fit=crop&q=80&w=600" alt="Professzionális autóvizsgálat előkészületek és OBD diagnosztika">
+          <!-- BIZTONSÁGOS JAVÍTÁS: A te saját linkedre hivatkozunk, így garantáltan beolvassa a védjegyedet ide is! -->
+          <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át! professzionális gépjármű átvizsgálás">
         </div>
         <div class="about-text">
           <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> gépjármű állapotfelmérés, amivel immár egy éve támogatom a tudatos autóvásárlókat Győrben és a környező régiókban.</p>
@@ -305,7 +308,7 @@
         <div class="checklist-card">
           <h3><i class="fa-solid fa-oil-can"></i> Motor, Váltó & Folyadékok</h3>
           <ul>
-            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékfolyadék teszt:</strong> Digitális műszeres mérés a fékfolyadék pontos forráspontjára és **víztartalmára** vonatkozóan (biztonsági szempont!).</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékfolyadék teszt:</strong> Digitális műszeres mérés a fékfolyadék pontos forráspontjára és **víztartalmára** vonatkozóan (kiemelt biztonsági szempont!).</li>
             <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Folyadékszintek & szivárgások:</strong> Motorolaj, hűtővíz, szervóolaj szintjének és szennyezettségének ellenőrzése, látható olaj- vagy vízfolyások felkutatása.</li>
             <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Erőátvitel csekk:</strong> Kuplung fogáspont, a sebességváltó (manuális vagy automata) kapcsolási mechanizmusának és zörejeinek vizsgálata.</li>
           </ul>
@@ -316,8 +319,8 @@
           <h3><i class="fa-solid fa-circle-dot"></i> Futómű, Fékek & Gumik</h3>
           <ul>
             <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Gumiabroncsok:</strong> A gumi profilmélységének, egyenletes kopásának és a gyártási évnek (**DOT szám**) az ellenőrzése.</li>
-            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékrendszer:</strong> Féktárcsák vállassága, fékbetétek vastagsága, fékcsövek állapota vizuálisan.</li>
-            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Futómű elemek:</strong> Lengéscsillapítók szivárgása, szilentek, gömbfejek, porvédő gumik állapotának helyszíni felmérése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékrendszer:</strong> Féktárcsák vállassága, fékbetétek vastagsága, fékcsövek állapotának vizuális felmérése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Futómű elemek:</strong> Lengéscsillapítók szivárgása, szilentek, gömbfejek, porvédő gumik állapotának helyszíni csekkolása.</li>
           </ul>
         </div>
 
@@ -335,35 +338,51 @@
         <div class="checklist-card">
           <h3><i class="fa-solid fa-file-invoice"></i> Próbakör & Okmányok</h3>
           <ul>
-            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dinamikus tesztút:</strong> Együtt elmegyünk egy próbakörre, ahol teszteljük az egyenesfutást, a fékhatást, és figyeljük a gyanús futómű- vagy motorzajokat.</li>
-            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dokumentumok:</strong> Alvázszám fizikai egyezése a papírokkal/szélvédővel, szervizkönyv bejegyzések vagy digitális előélet átbeszélése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dinamikus tesztút:</strong> Együtt elmegyünk egy próbakarikára, ahol teszteljük az egyenesfutást, a fékhatást, és figyeljük a gyanús futómű- vagy motorzajokat.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dokumentumok:</strong> Alvázszám fizikai egyezése a papírokkal/szélvédővel, szervizkönyv bejegyzések vagy elérhető előélet átbeszélése.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KÉPES KIEGÉSZÍTŐ BLOKK -->
-  <section id="expertise" class="section specification-tuning">
+  <!-- MÁRKÁK ÉS MOTOROK MÉLYFÚRÁS HITELESEN (VISSZATETT BLOKK) -->
+  <section id="specification" class="section specification-tuning">
     <div class="container">
+      <div class="section-header">
+        <h2>Típusismeret és Gyakori Területek</h2>
+        <div class="line"></div>
+      </div>
+
+      <!-- 1. Blokk: Benzines és Dízel autók -->
       <div class="expert-grid-block">
         <div class="expert-text-side">
-          <h3>Precíz mérések, megbízható adatok</h3>
-          <p>Minden autóvizsgálat során a modern digitális eszközökre és a fizikai tényekre támaszkodom. A fékfolyadék forráspontjának ellenőrzése vagy a klíma hideg levegőjének Celsius-pontos mérése olyan alapvető lépések, amelyek azonnal megmutatják a rendszer esetleges elhanyagoltságát vagy hibáit.</p>
-          <p>Nem hagyatkozunk az eladó szóbeli ígéreteire: a rétegvastagság-mérő és az OBD diagnosztikai interfész feketén-fehéren megmutatja a valóságot a vezérlőegységekben tárolt adatok és a karosszéria elemei alapján.</p>
+          <h3>Hagyományos benzines és dízel motorok</h3>
+          <p>A piacon leggyakrabban előforduló márkák (pl. VW csoport, BMW, Mercedes, Ford, Opel és a népszerű japán/koreai modellek) átnézése során kiemelten figyelek az élő adatokra és a kritikus pontokra:</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> <strong>VW Csoport (Audi, VW, Skoda, Seat):</strong> 1.2, 1.4, 2.0 TSI/TFSI közvetlen befecskendezős benzinesek kokszosodása, láncnyúlása; 1.6 és 2.0 CRTDI porlasztók állapota és részecskeszűrő (DPF) telítettsége.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>BMW & Mercedes:</strong> BMW N47/B47 vezérműlánc-nyúlási problémái; Mercedes BlueTEC és CDI rendszerek AdBlue, valamint NOX szenzor hibái.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Ford, Opel & Francia modellek:</strong> EcoBoost és PureTech motorok vezérlésének ellenőrzése; Opel 1.6 CDTI lánccsörrenés és izzítógyertya hibák.</li>
+          </ul>
         </div>
         <div class="expert-img-side">
-          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600" alt="Fékrendszer és műszeres vizsgálatok">
+          <!-- A saját védjegyedet használja háttér/illusztrációként a megbízhatóságért -->
+          <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Műszaki és fizikai átvizsgálások">
         </div>
       </div>
 
+      <!-- 2. Blokk: Hibrid és saját Tesla tapasztalat -->
       <div class="expert-grid-block reverse">
         <div class="expert-img-side">
-          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Hibrid és elektromos autó tapasztalatok">
+          <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Hibrid és elektromos hajtás átnézése">
         </div>
         <div class="expert-text-side">
-          <h3>Hibrid és saját Tesla tapasztalatok</h3>
-          <p>Mivel a mindennapokban magam is egy **Tesla Model 3**-at hajtok, közvetlen tulajdonosi és gyakorlati rálátásom van az elektromos autózás sajátosságaira. A villanyautók és a népszerű Toyota/Lexus hibridek felmérésekor a klasszikus futómű- és fékellenőrzések mellett a szoftveres alapinformációkra és az egyedi felépítésből adódó pontokra fókuszálunk.</p>
+          <h3>Hibridek és Gyakorlati Tapasztalat</h3>
+          <p>A hibrid és villanyautók elterjedésével a diagnosztika is átalakult. Mivel magam is egy **Tesla Model 3**-at hajtok a mindennapokban, gyakorlati, tulajdonosi tapasztalattal tudok segíteni az alapvető dolgok átnézésében:</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> <strong>Toyota & Lexus hibridek:</strong> Prius (Gen2, Gen3, Gen4) és Auris modellek hibrid akkumulátorának, szoftveres rendszerének és hűtőkörének diagnosztikai ellenőrzése.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Tesla és EV modellek:</strong> Saját tapasztalataim alapján a karosszéria illesztési pontjainak, a típusra jellemző futómű-zajoknak, valamint az alapvető szoftveres akkumulátor-információknak az áttekintése.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -468,7 +487,7 @@
     </div>
   </section>
 
-  <!-- TELJESEN HELYREÁLLÍTOTT 8 DB ÜGYFÉLVÉLEMÉNY SZEKCIÓ -->
+  <!-- HELYREÁLLÍTOTT 8 DB VALÓDI ÜGYFÉLVÉLEMÉNY SZEKCIÓ -->
   <section id="testimonials" class="section testimonials-modern">
     <div class="container">
       <div class="section-header">
@@ -530,7 +549,7 @@
       <div class="contact-wrapper">
         <div class="c-info-box">
           <h3>Keress bizalommal</h3>
-          <p>A piacon a jó állapotú autók gyorsan gazdára találnak. Ha megvan a kiszemelt jármű, hívj fel vagy írj üzenetet, és a lehető leggyorsabban egyeztetünk een szabad időpontot a felmérésre.</p>
+          <p>A piacon a jó állapotú autók gyorsan gazdára találnak. Ha megvan a kiszemelt jármű, hívj fel vagy írj üzenetet, és a lehető leggyorsabban egyeztetünk egy szabad időpontot a felmérésre.</p>
           <div class="c-links">
             <a href="tel:+36305804256" class="contact-link-item"><i class="fa-solid fa-phone"></i> +36 30 580 4256</a>
             <a href="mailto:vateravaresz@gmail.com" class="contact-link-item"><i class="fa-solid fa-envelope"></i> vateravaresz@gmail.com</a>
