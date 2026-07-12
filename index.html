@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ==========================================
-       NÉZZÜK ÁT! - COMPREHENSIVE AUTO STYLING
+       NÉZZÜK ÁT! - COMPREHENSIVE AUTO STYLING V3
        ========================================== */
     :root {
         --bg-main: #0b0d11;
@@ -80,7 +80,7 @@
         background: linear-gradient(180deg, rgba(11, 13, 17, 0.65) 0%, #0b0d11 100%); z-index: 1;
     }
 
-    .hero-content { relative: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
+    .hero-content { position: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
 
     .badge {
         display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-glow);
@@ -114,8 +114,9 @@
     .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
     .warning-box { background: rgba(255, 106, 0, 0.04); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
     .warning-title { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .warning-box p { color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem; }
 
-    /* CHECKLIST SZEKCIÓ (ÚJ JAVÍTOTT BLOKK) */
+    /* CHECKLIST SZEKCIÓ */
     .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
     .checklist-card { background: var(--bg-card); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255, 255, 255, 0.02); transition: var(--transition); }
     .checklist-card:hover { background: var(--bg-card-hover); border-color: rgba(255, 106, 0, 0.15); }
@@ -133,7 +134,7 @@
     .expert-text-side p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.95rem; }
     .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
 
-    /* SZOLGÁLTATÁSOK & ÁRAK & VÉLEMÉNYEK ALAPSTÍLUSOK */
+    /* SZOLGÁLTATÁSOK & ÁRAK & VÉLEMÉNYEK */
     .service-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
     .s-card { background: var(--bg-card); padding: 3rem 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); transition: var(--transition); }
     .s-card:hover { transform: translateY(-5px); background: var(--bg-card-hover); border-color: var(--accent); }
@@ -157,7 +158,8 @@
     .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
     .t-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); }
     .t-stars { color: #ffb700; font-size: 0.9rem; margin-bottom: 1rem; }
-    .t-card p { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .t-card p { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .t-card h4 { font-weight: 700; color: var(--white); }
 
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
     .c-links { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
@@ -196,6 +198,7 @@
         <li><a href="#services">Szolgáltatások</a></li>
         <li><a href="#prices">Árak</a></li>
         <li><a href="#expertise">Tapasztalat</a></li>
+        <li><a href="#testimonials">Vélemények</a></li>
         <li><a href="#contact">Kapcsolat</a></li>
       </ul>
     </div>
@@ -251,12 +254,13 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d84d?auto=format&fit=crop&q=80&w=600" alt="Professzionális autóvizsgálat előkészületek">
+          <!-- A generált, professzionális high-tech diagnosztikai kép a bemutatkozás mellé -->
+          watermarked_img_2658041486187190760.png
         </div>
         <div class="about-text">
           <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> gépjármű állapotfelmérés, amivel immár egy éve támogatom a tudatos autóvásárlókat Győrben és a környező régiókban.</p>
           
-          <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy tiszta, reális képet adjak az aktuális műszaki állapotáról – a felszíni csillogás mögött is.</p>
+          <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy tiszta, reális képet adjak az aktuális műszaki állapotáról – a felszíni esztétikai csillogás mögött is.</p>
 
           <div class="warning-box">
             <div class="warning-title"><i class="fa-solid fa-circle-info"></i> Miért hasznos a független átvizsgálás?</div>
@@ -267,12 +271,12 @@
     </div>
   </section>
 
-  <!-- ÚJ PONTOKBA SZEDETT CHECKLIST SZEKCIÓ -->
+  <!-- PONTOKBA SZEDETT CHECKLIST SZEKCIÓ -->
   <section id="checklist" class="section checklist-section" style="background: rgba(20, 23, 31, 0.2);">
     <div class="container">
       <div class="section-header">
         <h2>A Komplex Átvizsgálás Pontjai</h2>
-        <p style="color: var(--text-muted); text-align: center; margin-top: 0.5rem;">Ezeket a kritikus területeket nézzük át tételesen minden helyszíni felmérés során:</p>
+        <p style="color: var(--text-muted); text-align: center; margin-top: 0.5rem;">Ezeteket a kritikus területeket nézzük át tételesen minden helyszíni felmérés során:</p>
         <div class="line"></div>
       </div>
 
@@ -464,7 +468,7 @@
     </div>
   </section>
 
-  <!-- Vélemények -->
+  <!-- ÚJRA AKTIVÁLT ÉS TELJESEN BŐVÍTETT 8 DB ÜGYFÉLVÉLEMÉNY SZEKCIÓ -->
   <section id="testimonials" class="section testimonials-modern">
     <div class="container">
       <div class="section-header">
@@ -484,8 +488,33 @@
         </div>
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Külföldről behozott autót szerettem volna venni. Varesz már az online szűrésnél felhívta a figyelmemet pár furcsaságra, a helyszínen pedig kiderült, hogy a valóságban jóval több kilométer volt a motorvezérlőben."</p>
+          <p>"Külföldről behozott autót szerettem volna venni. Varesz már az online szűrésnél felhívta a figyelmemet pár furcsaságra, a helyszínen pedig kiderült, hogy a valóságban jóval több kilométer volt a motorvezérlőben. Szuper segítség!"</p>
           <h4>– Péter, Csorna</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül átnézte a futóművet, a saját tapasztalatai alapján elmondta, mire figyeljek a mindennapokban, és kaptam tőle egy jó képet a szoftveres adatokról is."</p>
+          <h4>– Roland, Sopron</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Első autómat vásároltam, és teljesen tanácstalan voltam a kereskedésben. Varesz higgadtan, lépésről lépésre átnézett mindent, elmagyarázta, mire kell figyelnem. Nagyon hálás vagyok a segítségéért."</p>
+          <h4>– Dániel, Győr</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Családi egyterűt kerestünk a feleségemmel, messziről utaztunk Győrbe. Megkértük Varaszt, hogy nézze meg az autót még az érkezésünk előtt. Mire odaértünk, már kész szakvéleménnyel várt, ami alapján bátran tudtunk dönteni."</p>
+          <h4>– Tamás, Pápa</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Korrekt, pontos és alapos. Nem kapkod, minden részletre (kárpitok alatti részek, gumiabroncsok kora, fékek állapota) nagyon figyel a műszeres diagnosztika mellett is. Csak ajánlani tudom."</p>
+          <h4>– Zoltán, Gönyű</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Az eladás előtti felmérést kértem a saját autómra. Olyan apróbb hibákra világított rá, amiket gyorsan meg tudtam javíttatni a meghirdetés előtt, így a vevőjelölttel teljesen korrekt, vita nélküli adásvételt kötöttünk."</p>
+          <h4>– Krisztina, Győr</h4>
         </div>
       </div>
     </div>
