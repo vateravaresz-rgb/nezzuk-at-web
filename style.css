@@ -1,392 +1,253 @@
-/*
-  Alapértelmezett stílusok a "Nézzük Át!" weboldalhoz.
-  Használ modern, letisztult kinézetet, élénk színekkel és tágas elrendezéssel.
-*/
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nézzük Át! – Autóvásárlási tanácsadás és diagnosztika</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Modern ikonok betöltése -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #f5f5f5;
-  background-color: #0a102a;
-}
+  <!-- Navigáció -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át logó" class="logo-img">
+        <span>Nézzük Át!</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about"><i class="fa-solid fa-user-check"></i> Bemutatkozás</a></li>
+        <li><a href="#services"><i class="fa-solid fa-screwdriver-wrench"></i> Szolgáltatások</a></li>
+        <li><a href="#prices"><i class="fa-solid fa-calculator"></i> Árak</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-phone"></i> Kapcsolat</a></li>
+      </ul>
+    </div>
+  </nav>
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
+  <!-- Hero szekció -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">1 ÉVE AZ ÚTON AZ ÖNÖK BIZTONSÁGÁÉRT</span>
+      <h1>Autóvásárlási tanácsadás<br>és helyszíni átvizsgálás</h1>
+      <p><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győr és 50 km-es körzetben</p>
+      <a href="#contact" class="cta-btn">Foglalj időpontot <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </header>
 
-/* Navigation */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
+  <!-- Bemutatkozás -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2><i class="fa-solid fa-circle-info"></i> Bemutatkozás</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="7250fb35-e33d-4951-95ee-4243715f02e9.png" alt="Autó belső díszítőkép">
+        </div>
+        <div class="about-text">
+          <p>Szia, Varesz vagyok! Pár éve egyre több ismerősnek, barátnak, munkatársnak segítettem jó autót venni – nem papíron jót, hanem valóban megbízhatót. Most ezt a tapasztalatot és tudást megnyitom szélesebb körnek is – így született meg a „Nézzük Át!”.</p>
+          <p class="warning-box">
+            <i class="fa-solid fa-triangle-exclamation"></i> <strong>A használtpiac egy aknamező:</strong> Visszatekert kilométerek, sérülések eltitkolva, rejtett hibák – az egész olyan, mint egy aknamező. Én abban segítek, hogy te ne lépj rosszat.
+          </p>
+          <p>Úgy vizsgálom át a járműveket a legmodernebb rétegvastagság-mérőkkel és diagnosztikai szoftverekkel, mintha a saját családomnak vásárolnám.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Logo styles: display the uploaded logo image next to the brand name */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
-}
+  <!-- Szolgáltatások -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2><i class="fa-solid fa-gears"></i> Szolgáltatások</h2>
+      <div class="service-cards">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Helyszíni átvizsgálás</h3>
+          <p>Gönyű kiindulási ponttal Győr és 30–50 km-es körzetben. Megvizsgálom a karosszériát, alvázat, rozsdásodást, fényezést, motorhangot, gumikat, fékeket és az összes elektromos funkciót. OBD hibakódolvasás és próbaút, ha az eladó engedi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3>Online tanácsadás</h3>
+          <p>Nem tudod, mit vegyél? Küldj 2–3 hirdetést, mondd el az igényeidet, és segítek megmondani, melyik éri meg. Megbízható benzines, dízel, hibrid vagy elektromos modellek ajánlása, típushibák, kerülendő motorok.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-tags"></i></div>
+          <h3>Eladás előtt is segítek</h3>
+          <p>Felmérést végzek, hogy mit érdemes javítani, reális árat lövök be, tanácsot adok a hirdetési szöveghez és fotótippeket. Csomagkedvezmény több szolgáltatás igénybevétele esetén.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.logo-img {
-  height: 42px;
-  width: auto;
-}
+  <!-- Árak -->
+  <section id="prices" class="section prices">
+    <div class="container">
+      <h2><i class="fa-solid fa-hand-holding-dollar"></i> Árak <span class="date-badge">Érvényes: 2026.07.20-tól</span></h2>
+      
+      <div class="price-grid-modern">
+        <div class="p-card featured">
+          <div class="p-badge">Alapdíj</div>
+          <h3>Helyszíni átvizsgálás</h3>
+          <span class="p-zone">Zóna 0 (0–15 km)</span>
+          <div class="p-amount">20 000 Ft</div>
+          <p class="p-desc">Gönyűn, Győrben és közvetlen vonzáskörzetében teljes körű diagnosztikával.</p>
+        </div>
 
-/* Highlight only the "Át!" part in the brand name */
-.logo span {
-  color: #00e676;
-}
+        <div class="p-card">
+          <h3>Átvizsgálás Zóna 1</h3>
+          <span class="p-zone">15–30 km között</span>
+          <div class="p-amount">25 000 Ft</div>
+          <p class="p-desc">Pl. Mezőörs, Pannonhalma, Lébény és környező települések.</p>
+        </div>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-}
+        <div class="p-card">
+          <h3>Átvizsgálás Zóna 2</h3>
+          <span class="p-zone">30–50 km között</span>
+          <div class="p-amount">30 000 Ft</div>
+          <p class="p-desc">Pl. Csorna, Mosonmagyaróvár, Pápa területei.</p>
+        </div>
 
-.nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.3s ease;
-}
+        <div class="p-card">
+          <h3>Átvizsgálás Zóna 3</h3>
+          <span class="p-zone">50 km felett</span>
+          <div class="p-amount">35 000 Ft<span class="from">-tól</span></div>
+          <p class="p-desc">Pl. Dudár és távolabbi címek egyedi kalkuláció alapján.</p>
+        </div>
 
-.nav-links li a:hover {
-  color: #00e676;
-}
+        <div class="p-card">
+          <h3>Online Tanácsadás</h3>
+          <span class="p-zone">Hirdetés szűrés</span>
+          <div class="p-amount">5 000 Ft</div>
+          <p class="p-desc">Levásárolható, ha utána helyszíni átvizsgálást kérsz.</p>
+        </div>
 
-/* Hero section */
-.hero {
-  /* Use the user-provided cover image as the hero background */
-  background-image: url('519492189_122093026424959189_7112896885793679657_n.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+        <div class="p-card">
+          <h3>Eladás Előtti Felmérés</h3>
+          <span class="p-zone">Saját gépjármű</span>
+          <div class="p-amount">15 000 - 20k Ft</div>
+          <p class="p-desc">Távolság és felmérés helyszíne szerint változik eladás előtt.</p>
+        </div>
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
+        <div class="p-card">
+          <h3>OBD Diagnosztika</h3>
+          <span class="p-zone">Helyben Gönyűn</span>
+          <div class="p-amount">5 000 Ft</div>
+          <p class="p-desc">Gyorsdiagnosztika és hibakód törlés kiszállás nélkül.</p>
+        </div>
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
+        <div class="p-card">
+          <h3>OBD Diagnosztika</h3>
+          <span class="p-zone">Kiszállással</span>
+          <div class="p-amount">10 000 Ft</div>
+          <p class="p-desc">Kiszállással Győrben és közvetlen vonzáskörzetében.</p>
+        </div>
+      </div>
+      
+      <p class="price-note"><i class="fa-solid fa-circle-exclamation"></i> <em>* Rugalmas óradíjas rendszer kereskedésekben: Ha az első autó nem felel meg, a helyszínen a többi autó átnézése kedvezményes áron történik!</em></p>
+    </div>
+  </section>
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  line-height: 1.2;
-}
+  <!-- Szakterületek -->
+  <section class="section expertise">
+    <div class="container">
+      <h2><i class="fa-solid fa-charging-station"></i> Szakterületek</h2>
+      <div class="ev-box">
+        <div class="ev-icon"><i class="fa-solid fa-bolt"></i> EV & Hybrid Kiemelt Tapasztalat</div>
+        <p>Különösen értek az elektromos és plug-in hibrid modellekhez: <strong>Tesla (Model 3 LFP és egyéb verziók), Toyota Prius generációk, Auris Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe, Citroën C-Zero, Peugeot iOn</strong>.</p>
+      </div>
+      <p class="traditional-box">Természetesen a megbízható japán (Toyota, Mazda, Suzuki, Honda) és európai (VW, Skoda, Seat, Renault, Peugeot, Citroën, Ford, Kia) benzines és dízel modelleket is teljes körűen átvizsgálom.</p>
+    </div>
+  </section>
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #e0e0e0;
-}
+  <!-- Működési terület -->
+  <section class="section area">
+    <div class="container">
+      <h2><i class="fa-solid fa-map-location-dot"></i> Működési terület</h2>
+      <p>Gönyű, Győr, Győrszentiván, Nagyszentjános, Vámosszabadi, Mosonmagyaróvár, Komárom, Tata, Csorna, Pannonhalma, Pápa – kb. 50 km-en belül, de egyedi megbeszélés alapján távolabb is!</p>
+    </div>
+  </section>
 
-.cta-btn {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  background-color: #00e676;
-  color: #0a102a;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
+  <!-- Miért pont én -->
+  <section class="section why">
+    <div class="container">
+      <h2><i class="fa-solid fa-user-check"></i> Miért pont én?</h2>
+      <ul>
+        <li>Nem vagyok kereskedő – úgy nézem meg az autót, mintha magamnak venném.</li>
+        <li>Valódi tapasztalattal rendelkezem – ismerősöknek, munkatársaknak évek óta segítek.</li>
+        <li>Rálátásom van a jól és rosszul sikerült motorokra, típushibákra.</li>
+        <li>Nem ijesztgetek: megoldásokat keresek, nem csak hibát.</li>
+      </ul>
+    </div>
+  </section>
 
-.cta-btn:hover {
-  background-color: #00c853;
-}
+  <!-- Vélemények -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2><i class="fa-solid fa-comments"></i> Vásárlói vélemények</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <p>"Varesz profi módon átvizsgálta az autót, így sikerült jó vételt találnom. Mindenkinek ajánlom!"</p>
+          <span>– Márk, Győr</span>
+        </div>
+        <div class="testimonial">
+          <p>"Ha használt autót vásárolsz, mindenképp kérj tanácsot tőle. Rengeteg pénzt spóroltam."</p>
+          <span>– Anita, Mosonmagyaróvár</span>
+        </div>
+        <div class="testimonial">
+          <p>"Az online tanácsadás nagy segítség volt, így tudtam mire figyeljek. Professzionális és barátságos!"</p>
+          <span>– Gábor, Komárom</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Sections */
-.section {
-  padding: 4rem 0;
-}
+  <!-- Gyakori kérdések -->
+  <section class="section faq">
+    <div class="container">
+      <h2><i class="fa-solid fa-circle-question"></i> Gyakori kérdések</h2>
+      <div class="faq-item">
+        <h3>Mire kell figyelnem használt autó vásárlásakor?</h3>
+        <p>Különösen ellenőrizd a karosszériát, az alváz rozsdásodását, a futómű állapotát, a kilométeróra valóságtartalmát és a szervizelőzményeket. Egy szakértővel mindig könnyebb kiszúrni a rejtett hibákat.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Mennyi időt vesz igénybe a helyszíni átvizsgálás?</h3>
+        <p>Általában 1–2 órát, attól függően, mennyire részletesen tudjuk megnézni az autót és van‑e próbaút.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Mit tartalmaz az online tanácsadás?</h3>
+        <p>Az elküldött hirdetések alapján javaslatot teszek a legjobb választásra, felhívom a figyelmed a típushibákra és a kerülendő motorokra, hogy magabiztosan dönthess.</p>
+      </div>
+    </div>
+  </section>
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #00e676;
-  text-align: center;
-}
+  <!-- Kapcsolat -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2><i class="fa-solid fa-address-book"></i> Kapcsolat</h2>
+      <p>Vedd fel velem a kapcsolatot időpontfoglalásért vagy további információért!</p>
+      <div class="contact-info">
+        <p><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> <a href="tel:+36305804256">+36 30 580 4256</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:vateravaresz@gmail.com">vateravaresz@gmail.com</a></p>
+        <p><i class="fa-brands fa-facebook"></i> <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61578775670018" target="_blank">Nézzük Át – Facebook oldal</a></p>
+        <p><i class="fa-solid fa-map-pin"></i> <strong>Térkép:</strong> <a href="https://www.google.com/maps/place/Gönyű" target="_blank">Gönyű és környéke</a></p>
+      </div>
+      <div class="contact-form-container">
+        <form class="contact-form" action="mailto:vateravaresz@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Neved" required>
+          <input type="email" name="email" placeholder="Email címed" required>
+          <textarea name="message" rows="4" placeholder="Milyen autót néznénk meg és hol?" required></textarea>
+          <button type="submit">Üzenet küldése <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-/* About */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-/* Services */
-.service-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.card {
-  background-color: #12255e;
-  padding: 1.5rem;
-  border-radius: 10px;
-  flex: 1 1 280px;
-  max-width: 320px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #00e676;
-}
-
-.card p {
-  color: #e0e0e0;
-  line-height: 1.4;
-}
-
-/* Prices */
-.price-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.price-item {
-  background-color: #12255e;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.price-item h4 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #00e676;
-}
-
-.price-item p {
-  color: #e0e0e0;
-}
-
-/* Lists */
-.why ul {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-.why ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
-  color: #e0e0e0;
-}
-
-.why ul li::before {
-  content: '\2022';
-  color: #00e676;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.2rem;
-  line-height: 1.2;
-}
-
-/* Contact */
-.contact-info {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* Testimonials */
-.testimonials {
-  background-color: #0d1c45;
-}
-
-.testimonial-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.testimonial {
-  background-color: #12255e;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex: 1 1 280px;
-  max-width: 320px;
-  color: #e0e0e0;
-  line-height: 1.5;
-}
-
-.testimonial p {
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-.testimonial span {
-  display: block;
-  font-weight: 600;
-  color: #00e676;
-}
-
-/* FAQ */
-.faq {
-  background-color: #0d1c45;
-}
-
-.faq h3 {
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #00e676;
-}
-
-.faq p {
-  color: #e0e0e0;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.faq-item:not(:last-child) {
-  border-bottom: 1px solid #1f336c;
-  padding-bottom: 1.5rem;
-}
-
-/* Contact Form */
-.contact-form-container {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-form {
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.8rem 1rem;
-  border: 1px solid #334880;
-  border-radius: 5px;
-  background-color: #12255e;
-  color: #e0e0e0;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #9aa7d0;
-}
-
-.contact-form button {
-  padding: 0.8rem 1.5rem;
-  background-color: #00e676;
-  color: #0a102a;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #00c853;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
-  color: #e0e0e0;
-}
-
-.contact-info a {
-  color: #00e676;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-.footer {
-  background-color: #090e24;
-  text-align: center;
-  padding: 1.5rem 0;
-}
-
-.footer p {
-  margin: 0;
-  color: #888fac;
-  font-size: 0.9rem;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .about-content {
-    flex-direction: column;
-  }
-}
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Nézzük Át! Minden jog fenntartva.</p>
+    </div>
+  </footer>
+</body>
+</html>
