@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ==========================================
-       NÉZZÜK ÁT! - ELEGANT AUTO STYLING
+       NÉZZÜK ÁT! - COMPREHENSIVE AUTO STYLING
        ========================================== */
     :root {
         --bg-main: #0b0d11;
@@ -80,7 +80,7 @@
         background: linear-gradient(180deg, rgba(11, 13, 17, 0.65) 0%, #0b0d11 100%); z-index: 1;
     }
 
-    .hero-content { position: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
+    .hero-content { relative: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
 
     .badge {
         display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-glow);
@@ -96,18 +96,7 @@
 
     .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
 
-    .cta-btn {
-        display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.2rem;
-        border-radius: 8px; font-weight: 700; text-decoration: none;
-        text-transform: uppercase; font-size: 0.9rem; transition: var(--transition);
-    }
-
-    .cta-btn.primary { background: var(--accent); color: #000; box-shadow: 0 4px 20px var(--accent-glow); }
-    .cta-btn.primary:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(255, 106, 0, 0.5); }
-    .cta-btn.secondary { border: 1px solid rgba(255, 255, 255, 0.15); color: var(--white); background: rgba(255, 255, 255, 0.03); }
-    .cta-btn.secondary:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.3); transform: translateY(-3px); }
-
-    /* QUICK STATS */
+    /* STATS */
     .quick-stats { background: rgba(20, 23, 31, 0.6); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
     .stat-item { display: flex; align-items: center; gap: 1.5rem; padding: 1rem; }
@@ -122,76 +111,73 @@
     /* ABOUT SZEKCIÓ */
     .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
     .about-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; text-align: justify; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
     .warning-box { background: rgba(255, 106, 0, 0.04); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
     .warning-title { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-    .warning-box p { color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem; }
 
-    /* GRID ELRENDEZÉSEK FOTÓKKAL */
+    /* CHECKLIST SZEKCIÓ (ÚJ JAVÍTOTT BLOKK) */
+    .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+    .checklist-card { background: var(--bg-card); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255, 255, 255, 0.02); transition: var(--transition); }
+    .checklist-card:hover { background: var(--bg-card-hover); border-color: rgba(255, 106, 0, 0.15); }
+    .checklist-card h3 { font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem; }
+    .checklist-card h3 i { color: var(--accent); }
+    .checklist-card ul { list-style: none; }
+    .checklist-card ul li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+    .checklist-card ul li i { color: var(--accent); margin-top: 0.3rem; font-size: 0.85rem; }
+    .checklist-card ul li strong { color: rgba(255,255,255,0.9); }
+
+    /* EXPERT GRID BLOCKS FOR IMAGES */
     .expert-grid-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
     .expert-grid-block.reverse { grid-template-columns: 1fr 1.2fr; }
     .expert-text-side h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.2rem; text-transform: uppercase; color: var(--white); }
-    .expert-text-side p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.95rem; text-align: justify; }
-    .expert-text-side ul { list-style: none; }
-    .expert-text-side ul li { color: var(--text-muted); margin-bottom: 0.6rem; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; }
-    .expert-text-side ul li i { color: var(--accent); margin-top: 0.25rem; font-size: 0.85rem; }
+    .expert-text-side p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.95rem; }
     .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
 
-    /* SZOLGÁLTATÁSOK */
+    /* SZOLGÁLTATÁSOK & ÁRAK & VÉLEMÉNYEK ALAPSTÍLUSOK */
     .service-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
     .s-card { background: var(--bg-card); padding: 3rem 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); transition: var(--transition); }
-    .s-card:hover { transform: translateY(-5px); background: var(--bg-card-hover); border-color: rgba(255, 106, 0, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+    .s-card:hover { transform: translateY(-5px); background: var(--bg-card-hover); border-color: var(--accent); }
     .s-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
     .s-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
-    .s-card p { color: var(--text-muted); font-size: 0.95rem; text-align: justify; }
+    .s-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-    /* ÁRAK */
     .prices-modern { background: rgba(15, 18, 25, 0.5); }
     .date-badge { display: inline-block; font-size: 0.85rem; background: rgba(255,255,255,0.08); padding: 0.3rem 0.8rem; border-radius: 50px; font-weight: 500; margin-left: 1rem; color: var(--text-muted); }
     .price-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     .p-card { background: var(--bg-card); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255, 255, 255, 0.03); position: relative; display: flex; flex-direction: column; transition: var(--transition); }
-    .p-card:hover { transform: translateY(-5px); }
-    .p-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 30px var(--accent-glow); background: linear-gradient(180deg, #181c26 0%, #14171f 100%); }
+    .p-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 30px var(--accent-glow); }
     .p-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 0.3rem 1.2rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
-    .p-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .p-zone { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin-bottom: 1.5rem; display: block; }
     .p-amount { font-size: 2.1rem; font-weight: 800; color: var(--white); margin-bottom: 2rem; }
-    .p-amount .from { font-size: 1rem; color: var(--text-muted); font-weight: 500; margin-left: 0.25rem; }
     .p-features { list-style: none; margin-top: auto; }
     .p-features li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem; }
     .p-features li i { color: var(--accent); margin-top: 0.25rem; }
     .p-card.additional-service { background: rgba(20, 23, 31, 0.4); }
     .p-desc { font-size: 0.9rem; color: var(--text-muted); }
-    .info-alert { margin-top: 4rem; background: var(--bg-card); border: 1px solid rgba(255, 106, 0, 0.2); padding: 1.5rem 2rem; border-radius: 12px; display: flex; align-items: center; gap: 1.5rem; }
-    .alert-icon { font-size: 1.7rem; color: var(--accent); }
 
-    /* VÉLEMÉNYEK */
-    .testimonials-modern { background: rgba(20, 23, 31, 0.3); }
     .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
     .t-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); }
     .t-stars { color: #ffb700; font-size: 0.9rem; margin-bottom: 1rem; }
-    .t-card p { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .t-card h4 { font-weight: 700; color: var(--white); }
+    .t-card p { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; }
 
-    /* KAPCSOLAT */
     .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
-    .c-info-box h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; }
     .c-links { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
-    .contact-link-item { display: flex; align-items: center; gap: 1rem; color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: var(--transition); }
-    .contact-link-item i { width: 45px; height: 45px; background: var(--bg-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); border: 1px solid rgba(255,255,255,0.05); }
-    .contact-link-item:hover { color: var(--accent); }
-    .contact-link-item:hover i { background: var(--accent); color: #000; transform: scale(1.05); }
-
+    .contact-link-item { display: flex; align-items: center; gap: 1rem; color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+    .contact-link-item i { width: 45px; height: 45px; background: var(--bg-card); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); }
     .c-form-box form { display: flex; flex-direction: column; gap: 1.25rem; }
-    .form-group input, .form-group textarea { width: 100%; padding: 1.1rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.95rem; }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px rgba(255, 106, 0, 0.1); }
-    .form-submit-btn { width: 100%; justify-content: center; cursor: pointer; border: none; }
+    .form-group input, .form-group textarea { width: 100%; padding: 1.1rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); }
 
-    .footer-modern { background: #06070a; padding: 2.5rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.03); color: var(--text-muted); font-size: 0.85rem; }
+    .footer-modern { background: #06070a; padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.03); }
+
+    .cta-btn {
+        display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.2rem;
+        border-radius: 8px; font-weight: 700; text-decoration: none;
+        text-transform: uppercase; font-size: 0.9rem; transition: var(--transition);
+    }
+    .cta-btn.primary { background: var(--accent); color: #000; }
+    .cta-btn.secondary { border: 1px solid rgba(255, 255, 255, 0.15); color: var(--white); background: rgba(255, 255, 255, 0.03); }
 
     @media (max-width: 992px) {
         .about-content, .contact-wrapper, .expert-grid-block, .expert-grid-block.reverse { grid-template-columns: 1fr; gap: 3rem; }
-        .hero h1 { font-size: 2.6rem; }
     }
   </style>
 </head>
@@ -206,10 +192,10 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about">Bemutatkozás</a></li>
+        <li><a href="#checklist">Mit nézünk át?</a></li>
         <li><a href="#services">Szolgáltatások</a></li>
         <li><a href="#prices">Árak</a></li>
-        <li><a href="#expertise">Szakterületek</a></li>
-        <li><a href="#testimonials">Vélemények</a></li>
+        <li><a href="#expertise">Tapasztalat</a></li>
         <li><a href="#contact">Kapcsolat</a></li>
       </ul>
     </div>
@@ -240,17 +226,17 @@
         </div>
       </div>
       <div class="stat-item">
-        <div class="stat-icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+        <div class="stat-icon-wrapper"><i class="fa-solid fa-list-check"></i></div>
         <div>
-          <h3>Műszeres ellenőrzés</h3>
-          <p>OBD hibakódolvasás és élő adatok szakszerű áttekintése.</p>
+          <h3>Komplex felmérés</h3>
+          <p>Több tucat kritikus pont részletes, fizikai és szoftveres ellenőrzése.</p>
         </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
-          <h3>Független segítség</h3>
-          <p>Nem állok kapcsolatban eladókkal, kizárólag a te érdeked nézem.</p>
+          <h3>Kizárólag neked</h3>
+          <p>Független szakértőként vagyok ott, az eladótól teljesen különállva.</p>
         </div>
       </div>
     </div>
@@ -265,62 +251,115 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <!-- Első új, prémium kép: Luxus sportautó letisztult sötét műhelyvilágítása -->
           <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d84d?auto=format&fit=crop&q=80&w=600" alt="Professzionális autóvizsgálat előkészületek">
         </div>
         <div class="about-text">
           <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> gépjármű állapotfelmérés, amivel immár egy éve támogatom a tudatos autóvásárlókat Győrben és a környező régiókban.</p>
           
-          <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy tiszta, reális képet adjak az aktuális műszaki állapotáról – a felszíni esztétikai csillogás mögött is.</p>
+          <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy tiszta, reális képet adjak az aktuális műszaki állapotáról – a felszíni csillogás mögött is.</p>
 
           <div class="warning-box">
-            <div class="warning-title"><i class="fa-solid fa-circle-info"></i> Miért hasznos az átvizsgálás?</div>
-            <p>A mai modern használt autók összetett rendszerek, ahol a korábbi karosszéria-sérülések szakszerűtlen elfedése vagy a rejtett elektronikai típushibák szabad szemmel egyáltalán nem láthatóak. Műszeres diagnosztikával, rétegvastagság-méréssel és alapos fizikai ellenőrzéssel segítek feltárni ezeket a kockázatokat, hogy a vásárlás után ne érjenek váratlan költségek.</p>
+            <div class="warning-title"><i class="fa-solid fa-circle-info"></i> Miért hasznos a független átvizsgálás?</div>
+            <p>A mai modern autók bonyolult rendszerek. A rejtett típushibák szabad szemmel vagy egy gyors próbakör alatt láthatatlanok maradnak. Alapos, többpontos fizikai és elektronikai csekkolással segítek feltárni ezeket, hogy elkerüld a vásárlás utáni azonnali, milliós szervizköltségeket.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Szakterületek / Típusismeret hitelesen -->
-  <section id="expertise" class="section specification-tuning">
+  <!-- ÚJ PONTOKBA SZEDETT CHECKLIST SZEKCIÓ -->
+  <section id="checklist" class="section checklist-section" style="background: rgba(20, 23, 31, 0.2);">
     <div class="container">
       <div class="section-header">
-        <h2>Tapasztalat a legnépszerűbb típusok terén</h2>
+        <h2>A Komplex Átvizsgálás Pontjai</h2>
+        <p style="color: var(--text-muted); text-align: center; margin-top: 0.5rem;">Ezeket a kritikus területeket nézzük át tételesen minden helyszíni felmérés során:</p>
         <div class="line"></div>
       </div>
 
-      <!-- 1. Blokk: Hagyományos benzines és dízel autók -->
-      <div class="expert-grid-block">
-        <div class="expert-text-side">
-          <h3>Benzines & Dízel ellenőrzések</h3>
-          <p>A hazai piacon leggyakrabban előforduló márkák (pl. VW csoport, BMW, Mercedes, Ford, Opel, valamint a japán és koreai típusok) átnézése során kiemelt figyelmet fordítok az alábbi kritikus területekre:</p>
+      <div class="checklist-grid">
+        <!-- 1. Karosszéria és Esztétika -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-car-side"></i> Karosszéria & Váz</h3>
           <ul>
-            <li><i class="fa-solid fa-check"></i> <strong>Benzines erőforrások:</strong> Közvetlen befecskendezéses motorok (pl. TSI) kokszosodásának ellenőrzése, turbónyomás és vezérlésdiagnosztika.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Dízel rendszerek:</strong> Porlasztócsúcsok korrekciós értékei, részecskeszűrők (DPF) telítettségi állapota és az üzemanyag-ellátó rendszer működése.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Szerkezeti elemek:</strong> A futómű kopó alkatrészeinek, a fékrendszer elhasználódottságának és a karosszéria korábbi javításainak precíz felmérése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Digitális festékmérés:</strong> A teljes karosszéria rétegvastagság-mérése a korábbi sérülések, gittelt vagy újrafényezett elemek felderítésére.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Szerkezeti elemek:</strong> Nyúlványok, oszlopok, fenéklemez és hegesztési pontok ellenőrzése a súlyos baleseti múlt kizárására.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Alvázvizsgálat:</strong> Korróziós (rozsdásodási) pontok, alsó műanyag burkolatok és védőelemek fizikai ellenőrzése.</li>
           </ul>
         </div>
+
+        <!-- 2. Diagnosztika és Elektronika -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-laptop-code"></i> Diagnosztika & Szoftver</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>OBD hibakód-olvasás:</strong> Minden elérhető vezérlőegység (Motor, Váltó, ABS, Légzsákok) mélyreható szoftveres szkennelése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Élő adatok elemzése:</strong> Menet közbeni vagy álló helyzeti motorparaméterek, töltés, üzemanyag-nyomás értékek valós idejű figyelése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Akkumulátor teszt:</strong> Hagyományos indítóakkumulátorok állapotának, indítóáramának és feszültségesésének ellenőrzése.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Mechanika és Folyadékok -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-oil-can"></i> Motor, Váltó & Folyadékok</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékfolyadék teszt:</strong> Digitális műszeres mérés a fékfolyadék pontos forráspontjára és **víztartalmára** vonatkozóan (biztonsági szempont!).</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Folyadékszintek & szivárgások:</strong> Motorolaj, hűtővíz, szervóolaj szintjének és szennyezettségének ellenőrzése, látható olaj- vagy vízfolyások felkutatása.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Erőátvitel csekk:</strong> Kuplung fogáspont, a sebességváltó (manuális vagy automata) kapcsolási mechanizmusának és zörejeinek vizsgálata.</li>
+          </ul>
+        </div>
+
+        <!-- 4. Futómű, Fékek és Gumik -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-circle-dot"></i> Futómű, Fékek & Gumik</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Gumiabroncsok:</strong> A gumi profilmélységének, egyenletes kopásának és a gyártási évnek (**DOT szám**) az ellenőrzése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Fékrendszer:</strong> Féktárcsák vállassága, fékbetétek vastagsága, fékcsövek állapota vizuálisan.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Futómű elemek:</strong> Lengéscsillapítók szivárgása, szilentek, gömbfejek, porvédő gumik állapotának helyszíni felmérése.</li>
+          </ul>
+        </div>
+
+        <!-- 5. Utastér és Extrák -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-couch"></i> Utastér, Extrák & Klíma</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Klíma hőmérséklet-mérés:</strong> A légkondicionáló rendszer hatékonyságának tesztelése, a befújt levegő pontos **hőmérsékletének mérése** digitális műszerrel.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Kényelmi extrák:</strong> Ülésfűtések, elektromos ablakok, tükrök, tetőablak, gombcsoportok és a fedélzeti rendszer működésének ellenőrzése.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Kopások és kezelőszervek:</strong> Kormány, pedálok, váltógomb és ülések állapota (összevetve a mutatott kilométeróra-állással).</li>
+          </ul>
+        </div>
+
+        <!-- 6. Próbakör és Papírok -->
+        <div class="checklist-card">
+          <h3><i class="fa-solid fa-file-invoice"></i> Próbakör & Okmányok</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dinamikus tesztút:</strong> Együtt elmegyünk egy próbakörre, ahol teszteljük az egyenesfutást, a fékhatást, és figyeljük a gyanús futómű- vagy motorzajokat.</li>
+            <li><i class="fa-solid fa-circle-chevron-right"></i> <strong>Dokumentumok:</strong> Alvázszám fizikai egyezése a papírokkal/szélvédővel, szervizkönyv bejegyzések vagy digitális előélet átbeszélése.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KÉPES KIEGÉSZÍTŐ BLOKK -->
+  <section id="expertise" class="section specification-tuning">
+    <div class="container">
+      <div class="expert-grid-block">
+        <div class="expert-text-side">
+          <h3>Precíz mérések, megbízható adatok</h3>
+          <p>Minden autóvizsgálat során a modern digitális eszközökre és a fizikai tényekre támaszkodom. A fékfolyadék forráspontjának ellenőrzése vagy a klíma hideg levegőjének Celsius-pontos mérése olyan alapvető lépések, amelyek azonnal megmutatják a rendszer esetleges elhanyagoltságát vagy hibáit.</p>
+          <p>Nem hagyatkozunk az eladó szóbeli ígéreteire: a rétegvastagság-mérő és az OBD diagnosztikai interfész feketén-fehéren megmutatja a valóságot a vezérlőegységekben tárolt adatok és a karosszéria elemei alapján.</p>
+        </div>
         <div class="expert-img-side">
-          <!-- Második új kép: Esztétikus közeli kép a fékekről és felniről -->
-          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600" alt="Fékrendszer és futómű ellenőrzés">
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600" alt="Fékrendszer és műszeres vizsgálatok">
         </div>
       </div>
 
-      <!-- 2. Blokk: Hibrid és saját Tesla tapasztalat -->
       <div class="expert-grid-block reverse">
         <div class="expert-img-side">
-          <!-- Harmadik új kép: Nagyon letisztult hibrid/EV műszerfal közeli fotó -->
-          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Hibrid és elektromos autó átvizsgálás">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=600" alt="Hibrid és elektromos autó tapasztalatok">
         </div>
         <div class="expert-text-side">
-          <h3>Hibrid & Elektromos modellek</h3>
-          <p>A hibrid és villanyautók speciális megközelítést igényelnek. Mivel a mindennapokban magam is egy **Tesla Model 3**-at használok, gyakorlati, tulajdonosi tapasztalattal segítek a felmérésükben:</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> <strong>Toyota & Lexus hibridek:</strong> A legnépszerűbb Prius és Auris modellek hibrid akkumulátorának, szoftveres rendszerének és hűtőkörének diagnosztikai ellenőrzése.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Tesla és EV modellek:</strong> Saját tapasztalataim alapján a karosszéria illesztési pontjainak, a típusra jellemző futómű-zajoknak, valamint az alapvető szoftveres akkumulátor-információknak az áttekintése.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Kiegészítő rendszerek:</strong> Klímakompresszorok, nagyfeszültségű kábelek és a kiegészítő elektromos perifériák szemrevételezése.</li>
-          </ul>
+          <h3>Hibrid és saját Tesla tapasztalatok</h3>
+          <p>Mivel a mindennapokban magam is egy **Tesla Model 3**-at hajtok, közvetlen tulajdonosi és gyakorlati rálátásom van az elektromos autózás sajátosságaira. A villanyautók és a népszerű Toyota/Lexus hibridek felmérésekor a klasszikus futómű- és fékellenőrzések mellett a szoftveres alapinformációkra és az egyedi felépítésből adódó pontokra fókuszálunk.</p>
         </div>
       </div>
     </div>
@@ -337,17 +376,17 @@
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <h3>Helyszíni Állapotfelmérés</h3>
-          <p>A karosszéria tüzetes átvizsgálása, digitális rétegvastagság-mérés a korábbi sérülések feltérképezésére. Élő adatos OBD diagnosztika, a fékek és futómű vizuális ellenőrzése, valamint közös próbavezetés.</p>
+          <p>A karosszéria tüzetes átvizsgálása, digitális rétegvastagság-mérés, élő adatos OBD diagnosztika, a fékek, gumik, alváz és futómű vizuális ellenőrzése, valamint közös próbavezetés.</p>
         </div>
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-comments"></i></div>
           <h3>Online Hirdetés-előszűrés</h3>
-          <p>Több autót is találtál az interneten, de bizonytalan vagy? Küldd át a linkeket! Segítek elemezni a képeket, az elérhető nyilvános adatok alapján ellenőrzöm az előéletet, és kiszűröm az intő jeleket.</p>
+          <p>Több autót is találtál az interneten? Küldd át a linkeket! Segítek elemezni a képeket, az elérhető nyilvános adatok alapján ellenőrzöm az előéletet, és kiszűröm az intő jeleket.</p>
         </div>
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-tags"></i></div>
           <h3>Eladás Előtti Felmérés</h3>
-          <p>Ha te vagy az eladó, és szeretnéd tisztán látni a gépjárműved aktuális műszaki állapotát, átnézem a kocsidat. Így felkészülten, valós érvekkel és reális piaci áron tudod majd átadni a vevőnek.</p>
+          <p>Ha te vagy az eladó, és szeretnéd tisztán látni a gépjárműved aktuális műszaki állapotát, átnézem a kocsidat. Így felkészülten, valós érvekkel és reális piaci áron tudod átadni a vevőnek.</p>
         </div>
       </div>
     </div>
@@ -368,9 +407,10 @@
           <span class="p-zone">0–15 km között (Gönyű központ és Győr)</span>
           <div class="p-amount">20 000 Ft</div>
           <ul class="p-features">
+            <li><i class="fa-solid fa-check"></i> Teljes körű, komplex fizikai és műszeres átvizsgálás</li>
             <li><i class="fa-solid fa-check"></i> Digitális festékréteg-vastagság mérés</li>
+            <li><i class="fa-solid fa-check"></i> Fékfolyadék víztartalom és klímahőmérséklet mérés</li>
             <li><i class="fa-solid fa-check"></i> Részletes OBD hibakódolvasás és élő adat elemzés</li>
-            <li><i class="fa-solid fa-check"></i> Motortér, fékrendszer és futómű vizuális csekk</li>
             <li><i class="fa-solid fa-check"></i> Próbakör és részletes helyszíni konzultáció</li>
           </ul>
         </div>
@@ -420,20 +460,6 @@
           <div class="p-amount">15 000 Ft-tól</div>
           <p class="p-desc">Állapotfelmérés eladás előtt, értékesítési és árképzési tanácsadással a távolság függvényében (Győr és Gönyű területén fix 15 000 Ft).</p>
         </div>
-
-        <div class="p-card additional-service">
-          <h3>OBD Cél-Diagnosztika</h3>
-          <span class="p-zone">Kizárólag hibakódolvasás</span>
-          <div class="p-amount">5 000 / 10 000 Ft</div>
-          <p class="p-desc">Helyben, Gönyűn elvégezve: **5 000 Ft**. <br>Kiszállással Győrben és közvetlen környezetében: **10 000 Ft**.</p>
-        </div>
-      </div>
-
-      <div class="info-alert">
-        <div class="alert-icon"><i class="fa-solid fa-car-burst"></i></div>
-        <div class="alert-text">
-          <strong>Több autót is megnéznél ugyanott?</strong> Amennyiben a helyszínen kiderül, hogy az elsőként választott gépjármű nem felel meg az elvárásoknak, a többi ott található autó átvizsgálását kedvezményes, egyedi óradíjas rendszerben vállalom.
-        </div>
       </div>
     </div>
   </section>
@@ -458,33 +484,8 @@
         </div>
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Külföldről behozott autót szerettem volna venni. Varesz már az online szűrésnél felhívta a figyelmemet pár furcsaságra, a helyszínen pedig kiderült, hogy a valóságban jóval több kilométer volt a motorvezérlőben. Szuper segítség!"</p>
+          <p>"Külföldről behozott autót szerettem volna venni. Varesz már az online szűrésnél felhívta a figyelmemet pár furcsaságra, a helyszínen pedig kiderült, hogy a valóságban jóval több kilométer volt a motorvezérlőben."</p>
           <h4>– Péter, Csorna</h4>
-        </div>
-        <div class="t-card">
-          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül átnézte a futóművet, a saját tapasztalatai alapján elmondta, mire figyeljek a mindennapokban, és kaptam tőle egy jó képet a szoftveres adatokról is."</p>
-          <h4>– Roland, Sopron</h4>
-        </div>
-        <div class="t-card">
-          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Első autómat vásároltam, és teljesen tanácstalan voltam a kereskedésben. Varesz higgadtan, lépésről lépésre átnézett mindent, elmagyarázta, mire kell figyelnem. Nagyon hálás vagyok a segítségéért."</p>
-          <h4>– Dániel, Győr</h4>
-        </div>
-        <div class="t-card">
-          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Családi egyterűt kerestünk a feleségemmel, messziről utaztunk Győrbe. Megkértük Varaszt, hogy nézze meg az autót még az érkezésünk előtt. Mire odaértünk, már kész szakvéleménnyel várt, ami alapján bátran tudtunk dönteni."</p>
-          <h4>– Tamás, Pápa</h4>
-        </div>
-        <div class="t-card">
-          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Korrekt, pontos és alapos. Nem kapkod, minden részletre (kárpitok alatti részek, gumiabroncsok kora, fékek állapota) nagyon figyel a műszeres diagnosztika mellett is. Csak ajánlani tudom."</p>
-          <h4>– Zoltán, Gönyű</h4>
-        </div>
-        <div class="t-card">
-          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Az eladás előtti felmérést kértem a saját autómra. Olyan apróbb hibákra világított rá, amiket gyorsan meg tudtam javíttatni a meghirdetés előtt, így a vevőjelölttel teljesen korrekt, vita nélküli adásvételt kötöttünk."</p>
-          <h4>– Krisztina, Győr</h4>
         </div>
       </div>
     </div>
