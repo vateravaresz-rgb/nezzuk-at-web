@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ==========================================
-       NÉZZÜK ÁT! - JAVÍTOTT, INTEGRÁLT DYNAMIQ STÍLUS
+       NÉZZÜK ÁT! - EXPERT AUTO TUNING STYLING
        ========================================== */
     :root {
         --bg-main: #0b0d11;
@@ -61,10 +61,10 @@
     }
     .logo span { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
     .nav-links a {
         color: var(--text-muted); text-decoration: none; font-weight: 600;
-        font-size: 0.9rem; transition: var(--transition); display: flex; align-items: center; gap: 0.5rem;
+        font-size: 0.85rem; transition: var(--transition); display: flex; align-items: center; gap: 0.4rem;
     }
     .nav-links a:hover { color: var(--accent); }
 
@@ -89,7 +89,7 @@
         border: 1px solid rgba(255, 106, 0, 0.3);
     }
 
-    .hero h1 { font-size: 3.8rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 1.5rem; }
     .highlight-text { color: var(--accent); text-shadow: 0 0 30px var(--accent-glow); }
     .hero-sub { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3rem; font-weight: 500; }
     .hero-sub i { color: var(--accent); }
@@ -121,11 +121,21 @@
 
     /* ABOUT SZEKCIÓ */
     .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-    .about-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .about-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
     .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+    .about-text ul { list-style: none; margin-bottom: 1.5rem; }
+    .about-text ul li { color: var(--text-muted); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+    .about-text ul li i { color: var(--accent); font-size: 0.85rem; }
     .warning-box { background: rgba(255, 106, 0, 0.05); border-left: 4px solid var(--accent); padding: 1.75rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
     .warning-title { color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
     .warning-box p { color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem; }
+
+    /* GRID ELRENDEZÉSEK FOTÓKKAL */
+    .expert-grid-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; }
+    .expert-grid-block.reverse { grid-template-columns: 1fr 1.2fr; }
+    .expert-text-side h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; color: var(--white); }
+    .expert-text-side p { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem; }
+    .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
 
     /* SZOLGÁLTATÁSOK */
     .service-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
@@ -155,15 +165,11 @@
     .info-alert { margin-top: 4rem; background: var(--bg-card); border: 1px solid rgba(255, 106, 0, 0.2); padding: 1.5rem 2rem; border-radius: 12px; display: flex; align-items: center; gap: 1.5rem; }
     .alert-icon { font-size: 1.7rem; color: var(--accent); }
 
-    /* SZAKTERÜLETEK */
-    .ev-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-bottom: 2.5rem; }
+    /* EV BOX SPECIÁLIS */
     .ev-box { background: linear-gradient(135deg, #111a24 0%, #14171f 100%); border: 1px solid rgba(255, 106, 0, 0.1); padding: 3rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
     .ev-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
     .ev-icon { font-size: 2.2rem; color: var(--accent); text-shadow: 0 0 15px var(--accent-glow); }
     .ev-box h3 { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; }
-    .expertise-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
-    .german-japanese { text-align: center; font-size: 1.1rem; color: var(--text-muted); margin-top: 2rem; }
-    .german-japanese i { color: var(--accent); }
 
     /* VÉLEMÉNYEK */
     .testimonials-modern { background: rgba(20, 23, 31, 0.3); }
@@ -190,21 +196,14 @@
     .footer-modern { background: #06070a; padding: 2.5rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.03); color: var(--text-muted); font-size: 0.85rem; }
 
     @media (max-width: 992px) {
-        .about-content, .contact-wrapper, .ev-grid { grid-template-columns: 1fr; gap: 3rem; }
-        .hero h1 { font-size: 3rem; }
-    }
-    @media (max-width: 768px) {
-        .nav-links { display: none; }
-        .hero h1 { font-size: 2.3rem; }
-        .hero-buttons { flex-direction: column; gap: 1rem; }
-        .info-alert { flex-direction: column; text-align: center; }
-        section { padding: 4rem 0; }
+        .about-content, .contact-wrapper, .expert-grid-block, .expert-grid-block.reverse { grid-template-columns: 1fr; gap: 3rem; }
+        .hero h1 { font-size: 2.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigáció (A te saját, ikonikus logóddal!) -->
+  <!-- Navigáció -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
@@ -272,20 +271,66 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <!-- Valós, élőben működő online kép: OBD2 diagnosztikai tablet csatlakoztatása az autóhoz -->
-          <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=600" alt="Professzionális gépjármű diagnosztikai eszköz csatlakoztatása">
+          <!-- Első új kép: OBD2 diagnosztikai tablet és adatok -->
+          <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=600" alt="Professzionális gépjármű diagnosztikai eszköz">
         </div>
         <div class="about-text">
-          <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> szolgáltatás, amivel immár egy éve támogatom a tudatos autóvásárlókat.</p>
+          <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> szolgáltatás, amivel immár egy éve támogatom a tudatos autóvásárlókat Győrben és vonzáskörzetében.</p>
           
           <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy reális, tiszta képet adjak az állapotáról – a felszíni csillogás alatt is.</p>
 
           <div class="warning-box">
             <div class="warning-title"><i class="fa-solid fa-circle-info"></i> Miért fontos a szakértő szem?</div>
-            <p>A modern használt autók összetett rendszerek. A rejtett karosszéria-javítások mellett a motorikus és elektronikus típushibák (kokszosodás a közvetlen befecskendezős benzineseknél, DPF telítettség a dízeleknél, vagy a hibrid akkumulátorok természetes elhasználódása) szabad szemmel nem láthatóak. Modern diagnosztikai eszközökkel és élő adatos elemzéssel segítek feltárni ezeket a kockázatokat, hogy a vásárlás után ne érjenek váratlan költségek.</p>
+            <p>A modern használt autók összetett rendszerek. A rejtett karosszéria-javítások mellett a motorikus és elektronikus típushibák szabad szemmel nem láthatóak. Élő adatos szoftveres elemzéssel és mechanikai vizsgálattal segítek feltárni a kockázatokat, hogy a vásárlás után ne érjenek váratlan, méregdrága költségek.</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Szakterületek / Motorizáltság mélyfúrás képekkel -->
+  <section id="expertise" class="section specification-tuning">
+    <div class="container">
+      <div class="section-header">
+        <h2>Mélyreható Típusismeret és Tesztek</h2>
+        <div class="line"></div>
+      </div>
+
+      <!-- 1. Blokk: Hagyományos és Turbós motorok -->
+      <div class="expert-grid-block">
+        <div class="expert-text-side">
+          <h3>Benzines & Turbódízel Célellenőrzés</h3>
+          <p>A modern belső égésű motorok komoly buktatókat rejtenek. Különös figyelmet fordítok az élő adatok elemzésekor az alábbi kritikus területekre:</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> <strong>VW csoport (Audi, VW, Skoda, Seat):</strong> 1.2, 1.4, 2.0 TSI/TFSI motorok kokszosodása, láncnyúlása, 1.6 és 2.0 CRTDI koromszűrő (DPF) telítettség és porlasztó korrekciók.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>BMW & Mercedes:</strong> BMW N47/B47 és N13 motorok vezérműlánc nyúlása, Mercedes BlueTEC rendszerek AdBlue és NOX szenzor hibái.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Ford, Opel & Francia modellek:</strong> EcoBoost repedések, PSA 1.2 PureTech szétmálló vezérműszíj szűrőeltömődése, Opel 1.6 CDTI lánccsörrenés.</li>
+          </ul>
+        </div>
+        <div class="expert-img-side">
+          <!-- Második új kép: Motortér mélyebb műszaki ellenőrzése -->
+          <img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=600" alt="Motortér diagnosztika és láncellenőrzés">
+        </div>
+      </div>
+
+      <!-- 2. Blokk: Hibrid és Elektromos rendszerek -->
+      <div class="expert-grid-block reverse">
+        <div class="expert-img-side">
+          <!-- Harmadik új kép: High-tech mérőműszer és multiméter elektromos rendszerekhez -->
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=500" alt="Műszeres elektronikai mérések akkumulátor cellákhoz">
+        </div>
+        <div class="expert-text-side">
+          <h3>EV & Plug-In Hybrid Specializáció</h3>
+          <p>A villany- és hibrid autóknál nem olajnyomást, hanem akkumulátor-degradációt és cellafeszültség-eltéréseket vizsgálunk célszoftverekkel:</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> <strong>Toyota & Lexus Hybrid:</strong> Prius (Gen2, Gen3, Gen4), Auris, RAV4 hibrid akkumulátor blokkok terhelés alatti cellavizsgálata, inverter hűtőkör ellenőrzése.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Tesla mélydiagnosztika:</strong> Model 3 (LFP és Long Range), Model Y valós akku-egészség (SoH) kiolvasás, pirotechnikai biztosíték és szoftveres naplóelemzés.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Népszerű PHEV-ek:</strong> Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, Renault Zoe töltőáramkör és akkumenedzsment tesztelése.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="german-japanese"><i class="fa-solid fa-circle-check"></i> A japán szívóbenzinesek (Toyota VVT-i, Mazda SkyActiv, Suzuki BoosterJet, Honda VTEC) gyári pontosságú átvizsgálása mellett az európai dízelspecialitásokban is naprakész vagyok.</p>
     </div>
   </section>
 
@@ -401,32 +446,6 @@
     </div>
   </section>
 
-  <!-- Szakterületek -->
-  <section id="expertise" class="section expertise-modern">
-    <div class="container">
-      <div class="section-header">
-        <h2>Milyen modellek terén számíthatsz rám?</h2>
-        <div class="line"></div>
-      </div>
-      
-      <div class="ev-grid">
-        <div class="ev-box">
-          <div class="ev-header">
-            <div class="ev-icon"><i class="fa-solid fa-charging-station"></i></div>
-            <h3>EV & Plug-In Hybrid Diagnosztika</h3>
-          </div>
-          <p>Az elektromos és hibrid hajtásláncok speciális megközelítést igényelnek. Megfelelő szoftveres háttérrel rendelkezem a cellafeszültségek, a degradáció és az akkumulátor-menedzsment ellenőrzéséhez a legnépszerűbb típusoknál: **Tesla (Model 3 LFP és Long Range verziók is), Toyota Prius generációk, Auris és RAV4 Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe**.</p>
-        </div>
-        <div class="expertise-image">
-          <!-- Valós online kép: Digitális multiméter és professzionális mérőtüskék használata -->
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=500" alt="Műszeres elektronikai mérések">
-        </div>
-      </div>
-      
-      <p class="german-japanese"><i class="fa-solid fa-circle-check"></i> **Hagyományos erőforrások:** Természetesen a klasszikus benzines és dízel modelleket is alaposan ismerem, legyen szó japán szívómotorokról (Toyota, Mazda, Suzuki, Honda) vagy az európai gyártók turbós, közvetlen befecskendezéses verzióiról (VW csoport TSI/TDI, BMW, Mercedes, Ford, Kia/Hyundai).</p>
-    </div>
-  </section>
-
   <!-- Vélemények -->
   <section id="testimonials" class="section testimonials-modern">
     <div class="container">
@@ -452,7 +471,7 @@
         </div>
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül elmagyarázta az akku állapotát, átnézte a futóművet, and kaptam tőle egy részletes képet a kocsi szoftveres hátteréről is. Nagyon közvetlen és felkészült szakember."</p>
+          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül elmagyarázta az akku állapotát, átnézte a futóművet, és kaptam tőle egy részletes képet a kocsi szoftveres hátteréről is. Nagyon közvetlen és felkészült szakember."</p>
           <h4>– Roland, Sopron</h4>
         </div>
         <div class="t-card">
