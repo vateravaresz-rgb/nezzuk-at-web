@@ -2,131 +2,268 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
+  <title>Nézzük Át! – Autóvásárlási Átvizsgálás</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nézzük Át! – Független Autóvásárlási Átvizsgálás és Állapotfelmérés</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FONT + ICON -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    :root {
-        --bg-main: #0b0d11;
-        --bg-card: #14171f;
-        --bg-card-hover: #1c212c;
-        --accent: #ff6a00;
-        --accent-glow: rgba(255, 106, 0, 0.25);
-        --text-main: #f3f4f6;
-        --text-muted: #9ca3af;
-        --white: #ffffff;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-        background-color: var(--bg-main);
-        color: var(--text-main);
-        font-family: 'Montserrat', sans-serif;
-        line-height: 1.6;
-        overflow-x: hidden;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0d11;
+      color: #f3f4f6;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    section { padding: 6rem 0; }
-
-    .section-header { text-align: center; margin-bottom: 4rem; }
-    .section-header h2 { font-size: 2.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-    .section-header .line {
-        width: 60px; height: 4px; background: var(--accent);
-        margin: 1rem auto 0; border-radius: 2px; box-shadow: 0 0 10px var(--accent-glow);
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(11,13,17,0.9);
+      padding: 1rem 2rem;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #ff6a00;
     }
 
-    .navbar {
-        position: fixed; top: 0; left: 0; width: 100%;
-        background: rgba(11, 13, 17, 0.95); backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 9999; padding: 0.75rem 0;
-    }
-
-    .nav-container {
-        max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-        display: flex; justify-content: space-between; align-items: center;
-    }
-
-    .logo { display: flex; align-items: center; gap: 0.75rem; }
-    .logo-img {
-        height: 45px; width: 45px; border-radius: 50%;
-        border: 2px solid var(--accent); object-fit: cover; background: #fff;
-    }
-    .logo span { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
-
-    .nav-links { display: flex; list-style: none; gap: 1.5rem; }
-    .nav-links a {
-        color: var(--text-muted); text-decoration: none; font-weight: 600;
-        font-size: 0.85rem; transition: var(--transition); display: flex; align-items: center; gap: 0.4rem;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
+    /* HERO */
     .hero {
-        position: relative; min-height: 80vh; display: flex; align-items: center;
-        justify-content: center; text-align: center; padding-top: 8rem;
-        background-size: cover; background-position: center; background-repeat: no-repeat;
+      min-height: 90vh;
+      background-image: url('https://images.unsplash.com/photo-1515923152115-758a6c1f0f3b?auto=format&fit=crop&q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      color: #ff6a00;
+    }
+    .hero p {
+      color: #d1d5db;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+    .btn-primary {
+      background: #ff6a00;
+      color: #000;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
     }
 
-    .hero-bg-overlay {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(180deg, rgba(11, 13, 17, 0.65) 0%, #0b0d11 100%); z-index: 1;
+    /* SECTION */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+    .line {
+      width: 60px;
+      height: 4px;
+      background: #ff6a00;
+      margin: 0 auto 3rem;
+      border-radius: 2px;
     }
 
-    .hero-content { position: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
-
-    .badge {
-        display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-glow);
-        color: var(--accent); padding: 0.6rem 1.2rem; border-radius: 50px;
-        font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 2rem;
-        border: 1px solid rgba(255, 106, 0, 0.3);
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-grid img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .warning {
+      background: rgba(255,106,0,0.1);
+      padding: 1.5rem;
+      border-left: 4px solid #ff6a00;
+      border-radius: 8px;
+      margin-top: 2rem;
     }
 
-    .hero h1 { font-size: 3.3rem; font-weight: 900; line-height: 1.2; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .highlight-text { color: var(--accent); text-shadow: 0 0 30px var(--accent-glow); }
-    .hero-sub { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 3rem; font-weight: 500; }
-    .hero-sub i { color: var(--accent); }
+    /* PRICES */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .price-card {
+      background: #14171f;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .price-card h3 {
+      margin-bottom: 1rem;
+    }
+    .price-card .amount {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
 
-    .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #06070a;
+      color: #9ca3af;
+      margin-top: 3rem;
+    }
 
+    @media(max-width:900px){
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigáció -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át hivatalos védjegy logó" class="logo-img">
-        <span>Nézzük Át!</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about">Bemutatkozás</a></li>
-        <li><a href="#checklist">Mit nézünk át?</a></li>
-        <li><a href="#specification">Típusismeret</a></li>
-        <li><a href="#services">Szolgáltatások</a></li>
-        <li><a href="#prices">Árak</a></li>
-        <li><a href="#testimonials">Vélemények</a></li>
-        <li><a href="#contact">Kapcsolat</a></li>
-      </ul>
+  <!-- NAV -->
+  <nav>
+    <div style="font-weight:800; font-size:1.3rem;">Nézzük Át!</div>
+    <div>
+      <a href="#about">Bemutatkozás</a>
+      <a href="#prices">Árak</a>
+      <a href="#contact">Kapcsolat</a>
     </div>
   </nav>
 
-  <!-- Hero szekció -->
-  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1515923152115-758a6c1f0f3b?auto=format&fit=crop&q=80&w=1600');">
-    <div class="hero-bg-overlay"></div>
+  <!-- HERO -->
+  <header class="hero">
     <div class="hero-content">
-      <span class="badge"><i class="fa-solid fa-road"></i> MÁR EGY ÉVE AZ ÖNÖK BIZTONSÁGÁÉRT AZ UTAKRA</span>
-      <h1>Használt autó vásárlás előtt állsz? <br><span class="highlight-text">Nézzük át alaposan!</span></h1>
-      <p class="hero-sub"><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győrben és 50 km-es körzetében segítek a helyszíni állapotfelmérésben.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="cta-btn primary">Időpont egyeztetés <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="#prices" class="cta-btn secondary">Árlista megtekintése</a>
-      </div>
+      <h1>Használt autó vásárlás előtt állsz?<br><span class="highlight">Nézzük át alaposan!</span></h1>
+      <p><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győrben és 50 km-es körzetében segítek a helyszíni állapotfelmérésben.</p>
+      <button class="btn btn-primary">Időpont egyeztetés</button>
+      <button class="btn btn-secondary">Árlista</button>
     </div>
   </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Szia, Varesz vagyok!</h2>
+    <div class="line"></div>
+
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1617469767053-d3b508a0d84d?auto=format&fit=crop&q=80&w=1600">
+
+      <div>
+        <p>Szia, Varesz vagyok — független autóvásárlási szakértő és diagnosztikai technikus. Több mint egy éve segítem a tudatos autóvásárlókat Győrben és környékén.</p>
+
+        <p>A célom egyszerű: tiszta, őszinte és reális képet adni az autó műszaki állapotáról — hogy ne fizess rá később.</p>
+
+        <div class="warning">
+          <strong><i class="fa-solid fa-circle-info"></i> Miért fontos?</strong>
+          <p>A modern autók bonyolult rendszerek. Sok hiba csak célzott mérésből, élő adatokból vagy diagnosztikából derül ki.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section id="prices">
+    <h2>Fix Árak – Rejtett Költségek Nélkül</h2>
+    <div class="line"></div>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Zóna 0 – Győr</h3>
+        <div class="amount">20 000 Ft</div>
+        <p>Teljes körű átvizsgálás, diagnosztika, próbavezetés.</p>
+      </div>
+
+      <div class="price-card">
+        <h3>Zóna 1 – 15–30 km</h3>
+        <div class="amount">25 000 Ft</div>
+        <p>Helyszíni komplex vizsgálat, minden mérés benne van.</p>
+      </div>
+
+      <div class="price-card">
+        <h3>Zóna 2 – 30–50 km</h3>
+        <div class="amount">30 000 Ft</div>
+        <p>Teljes körű felmérés távolabbi településeken.</p>
+      </div>
+
+      <div class="price-card">
+        <h3>Zóna 3 – 50 km felett</h3>
+        <div class="amount">35 000 Ft-tól</div>
+        <p>Veszprém, Komárom, Tatabánya, Székesfehérvár.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Kapcsolat</h2>
+    <div class="line"></div>
+
+    <p style="text-align:center; color:#9ca3af;">Írj vagy hívj bátran, ha autót néznél meg.</p>
+
+    <p style="text-align:center; margin-top:1rem;">
+      <strong>Telefon:</strong> +36 30 123 4567<br>
+      <strong>Email:</strong> info@nezzukat.hu
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Nézzük Át! – Gönyű, Győr és környéke
+  </footer>
 
 </body>
 </html>
