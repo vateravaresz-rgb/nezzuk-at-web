@@ -91,69 +91,42 @@
 
     .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
 
-    .quick-stats { background: rgba(20, 23, 31, 0.6); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
-    .stat-item { display: flex; align-items: center; gap: 1.5rem; padding: 1rem; }
-    .stat-icon-wrapper {
-        font-size: 1.8rem; color: var(--accent); background: var(--accent-glow);
-        width: 55px; height: 55px; display: flex; align-items: center; justify-content: center;
-        border-radius: 12px; border: 1px solid rgba(255, 106, 0, 0.2);
-    }
-    .stat-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .stat-item p { color: var(--text-muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
 
-    .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-    .about-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
-    .warning-box { background: rgba(255, 106, 0, 0.04); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
-    .warning-title { color: var(--accent); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-    .warning-box p { color: var(--text-muted); margin-bottom: 0; font-size: 0.95rem; }
+  <!-- Navigáció -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át hivatalos védjegy logó" class="logo-img">
+        <span>Nézzük Át!</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">Bemutatkozás</a></li>
+        <li><a href="#checklist">Mit nézünk át?</a></li>
+        <li><a href="#specification">Típusismeret</a></li>
+        <li><a href="#services">Szolgáltatások</a></li>
+        <li><a href="#prices">Árak</a></li>
+        <li><a href="#testimonials">Vélemények</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
-    .checklist-card { background: var(--bg-card); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255, 255, 255, 0.02); transition: var(--transition); }
-    .checklist-card:hover { background: var(--bg-card-hover); border-color: rgba(255, 106, 0, 0.15); }
-    .checklist-card h3 { font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.75rem; }
-    .checklist-card h3 i { color: var(--accent); }
-    .checklist-card ul { list-style: none; }
-    .checklist-card ul li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.6rem; }
-    .checklist-card ul li i { color: var(--accent); margin-top: 0.3rem; font-size: 0.85rem; }
-    .checklist-card ul li strong { color: rgba(255,255,255,0.9); }
+  <!-- Hero szekció -->
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1515923152115-758a6c1f0f3b?auto=format&fit=crop&q=80&w=1600');">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <span class="badge"><i class="fa-solid fa-road"></i> MÁR EGY ÉVE AZ ÖNÖK BIZTONSÁGÁÉRT AZ UTAKRA</span>
+      <h1>Használt autó vásárlás előtt állsz? <br><span class="highlight-text">Nézzük át alaposan!</span></h1>
+      <p class="hero-sub"><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győrben és 50 km-es körzetében segítek a helyszíni állapotfelmérésben.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="cta-btn primary">Időpont egyeztetés <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#prices" class="cta-btn secondary">Árlista megtekintése</a>
+      </div>
+    </div>
+  </header>
 
-    .expert-grid-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
-    .expert-grid-block.reverse { grid-template-columns: 1fr 1.2fr; }
-    .expert-text-side h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.2rem; text-transform: uppercase; color: var(--white); }
-    .expert-text-side p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 0.95rem; }
-    .expert-text-side ul { list-style: none; }
-    .expert-text-side ul li { color: var(--text-muted); margin-bottom: 0.6rem; display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; }
-    .expert-text-side ul li i { color: var(--accent); margin-top: 0.35rem; font-size: 0.85rem; }
-    .expert-img-side img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
-
-    .service-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .s-card { background: var(--bg-card); padding: 3rem 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); transition: var(--transition); }
-    .s-card:hover { transform: translateY(-5px); background: var(--bg-card-hover); border-color: var(--accent); }
-    .s-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
-    .s-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
-    .s-card p { color: var(--text-muted); font-size: 0.95rem; }
-
-    .prices-modern { background: rgba(15, 18, 25, 0.5); }
-    .date-badge { display: inline-block; font-size: 0.85rem; background: rgba(255,255,255,0.08); padding: 0.3rem 0.8rem; border-radius: 50px; font-weight: 500; margin-left: 1rem; color: var(--text-muted); }
-    .price-grid-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .p-card { background: var(--bg-card); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255, 255, 255, 0.03); position: relative; display: flex; flex-direction: column; transition: var(--transition); }
-    .p-card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 30px var(--accent-glow); }
-    .p-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 0.3rem 1.2rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
-    .p-amount { font-size: 2.1rem; font-weight: 800; color: var(--white); margin-bottom: 2rem; }
-    .p-features { list-style: none; margin-top: auto; }
-    .p-features li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem; }
-    .p-features li i { color: var(--accent); margin-top: 0.25rem; }
-    .p-card.additional-service { background: rgba(20, 23, 31, 0.4); }
-    .p-desc { font-size: 0.9rem; color: var(--text-muted); }
-
-    .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
-    .t-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.02); }
-    .t-stars { color: #ffb700; font-size: 0.9rem; margin-bottom: 1rem; }
-    .t-card p { font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .t-card h4 { font-weight: 700; color: var(--white); }
-
-    .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
-    .c-links { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
-    .contact-link-item { display: flex; align-items: center; gap: 1rem; color: var(--text-main); text-decoration: none; font-weight
+</body>
+</html>
