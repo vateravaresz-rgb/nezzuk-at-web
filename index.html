@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ==========================================
-       NÉZZÜK ÁT! - JAVÍTOTT, BEÉPÍTETT STÍLUSLAP
+       NÉZZÜK ÁT! - JAVÍTOTT, INTEGRÁLT DYNAMIQ STÍLUS
        ========================================== */
     :root {
         --bg-main: #0b0d11;
@@ -57,7 +57,7 @@
     .logo { display: flex; align-items: center; gap: 0.75rem; }
     .logo-img {
         height: 45px; width: 45px; border-radius: 50%;
-        border: 2px solid var(--accent); object-fit: cover;
+        border: 2px solid var(--accent); object-fit: cover; background: #fff;
     }
     .logo span { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
 
@@ -77,7 +77,7 @@
 
     .hero-bg-overlay {
         position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(180deg, rgba(11, 13, 17, 0.6) 0%, #0b0d11 100%); z-index: 1;
+        background: linear-gradient(180deg, rgba(11, 13, 17, 0.65) 0%, #0b0d11 100%); z-index: 1;
     }
 
     .hero-content { position: relative; z-index: 2; max-width: 850px; padding: 0 2rem; }
@@ -156,11 +156,13 @@
     .alert-icon { font-size: 1.7rem; color: var(--accent); }
 
     /* SZAKTERÜLETEK */
-    .ev-box { background: linear-gradient(135deg, #111a24 0%, #14171f 100%); border: 1px solid rgba(255, 106, 0, 0.1); padding: 3rem; border-radius: 20px; margin-bottom: 2.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+    .ev-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; margin-bottom: 2.5rem; }
+    .ev-box { background: linear-gradient(135deg, #111a24 0%, #14171f 100%); border: 1px solid rgba(255, 106, 0, 0.1); padding: 3rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
     .ev-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
     .ev-icon { font-size: 2.2rem; color: var(--accent); text-shadow: 0 0 15px var(--accent-glow); }
     .ev-box h3 { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; }
-    .german-japanese { text-align: center; font-size: 1.1rem; color: var(--text-muted); }
+    .expertise-image img { width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+    .german-japanese { text-align: center; font-size: 1.1rem; color: var(--text-muted); margin-top: 2rem; }
     .german-japanese i { color: var(--accent); }
 
     /* VÉLEMÉNYEK */
@@ -188,7 +190,7 @@
     .footer-modern { background: #06070a; padding: 2.5rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.03); color: var(--text-muted); font-size: 0.85rem; }
 
     @media (max-width: 992px) {
-        .about-content, .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+        .about-content, .contact-wrapper, .ev-grid { grid-template-columns: 1fr; gap: 3rem; }
         .hero h1 { font-size: 3rem; }
     }
     @media (max-width: 768px) {
@@ -202,12 +204,11 @@
 </head>
 <body>
 
-  <!-- Navigáció -->
+  <!-- Navigáció (A te saját, ikonikus logóddal!) -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <!-- Átmeneti ikon a logónak, ami tökéletesen mutat sötét módban -->
-        <div style="font-size: 1.8rem; color: var(--accent);"><i class="fa-solid fa-car-burst"></i></div>
+        <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át hivatalos védjegy logó" class="logo-img">
         <span>Nézzük Át!</span>
       </div>
       <ul class="nav-links">
@@ -221,7 +222,7 @@
     </div>
   </nav>
 
-  <!-- Hero szekció (A te saját 20.000 Ft-os nagy Facebook-banneredet használja háttérnek!) -->
+  <!-- Hero szekció (A megújult 20.000 Ft-os fix nagyméretű védjegy banneredet használja háttérnek!) -->
   <header class="hero" style="background-image: url('518084437_122093025248959189_2202132677810798072_n.jpg');">
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
@@ -271,8 +272,8 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <!-- Biztonságos, közvetlenül betöltő kép a motor térről -->
-          <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&q=80&w=600" alt="Autódiagnosztika folyamatban">
+          <!-- Valós, élőben működő online kép: OBD2 diagnosztikai tablet csatlakoztatása az autóhoz -->
+          <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=600" alt="Professzionális gépjármű diagnosztikai eszköz csatlakoztatása">
         </div>
         <div class="about-text">
           <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> szolgáltatás, amivel immár egy éve támogatom a tudatos autóvásárlókat.</p>
@@ -407,18 +408,26 @@
         <h2>Milyen modellek terén számíthatsz rám?</h2>
         <div class="line"></div>
       </div>
-      <div class="ev-box">
-        <div class="ev-header">
-          <div class="ev-icon"><i class="fa-solid fa-charging-station"></i></div>
-          <h3>EV & Plug-In Hybrid Diagnosztika</h3>
+      
+      <div class="ev-grid">
+        <div class="ev-box">
+          <div class="ev-header">
+            <div class="ev-icon"><i class="fa-solid fa-charging-station"></i></div>
+            <h3>EV & Plug-In Hybrid Diagnosztika</h3>
+          </div>
+          <p>Az elektromos és hibrid hajtásláncok speciális megközelítést igényelnek. Megfelelő szoftveres háttérrel rendelkezem a cellafeszültségek, a degradáció és az akkumulátor-menedzsment ellenőrzéséhez a legnépszerűbb típusoknál: **Tesla (Model 3 LFP és Long Range verziók is), Toyota Prius generációk, Auris és RAV4 Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe**.</p>
         </div>
-        <p>Az elektromos és hibrid hajtásláncok speciális megközelítést igényelnek. Megfelelő szoftveres háttérrel rendelkezem a cellafeszültségek, a degradáció és az akkumulátor-menedzsment ellenőrzéséhez a legnépszerűbb típusoknál: **Tesla (Model 3 LFP és Long Range verziók is), Toyota Prius generációk, Auris és RAV4 Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe**.</p>
+        <div class="expertise-image">
+          <!-- Valós online kép: Digitális multiméter és professzionális mérőtüskék használata -->
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=500" alt="Műszeres elektronikai mérések">
+        </div>
       </div>
+      
       <p class="german-japanese"><i class="fa-solid fa-circle-check"></i> **Hagyományos erőforrások:** Természetesen a klasszikus benzines és dízel modelleket is alaposan ismerem, legyen szó japán szívómotorokról (Toyota, Mazda, Suzuki, Honda) vagy az európai gyártók turbós, közvetlen befecskendezéses verzióiról (VW csoport TSI/TDI, BMW, Mercedes, Ford, Kia/Hyundai).</p>
     </div>
   </section>
 
-  <!-- Vélemények (A kért bővített 8 darabos szekció!) -->
+  <!-- Vélemények -->
   <section id="testimonials" class="section testimonials-modern">
     <div class="container">
       <div class="section-header">
@@ -443,7 +452,7 @@
         </div>
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül elmagyarázta az akku állapotát, átnézte a futóművet, és kaptam tőle egy részletes képet a kocsi szoftveres hátteréről is. Nagyon közvetlen és felkészült szakember."</p>
+          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül elmagyarázta az akku állapotát, átnézte a futóművet, and kaptam tőle egy részletes képet a kocsi szoftveres hátteréről is. Nagyon közvetlen és felkészült szakember."</p>
           <h4>– Roland, Sopron</h4>
         </div>
         <div class="t-card">
