@@ -4,16 +4,701 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nézzük Át! – Professzionális Autóvásárlási Átvizsgálás és Diagnosztika</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ==========================================
+       NÉZZÜK ÁT! - MODERNISE & TUNING STYLING
+       ========================================== */
+    :root {
+        --bg-main: #0b0d11;
+        --bg-card: #14171f;
+        --bg-card-hover: #1c212c;
+        --accent: #ff6a00;
+        --accent-glow: rgba(255, 106, 0, 0.25);
+        --text-main: #f3f4f6;
+        --text-muted: #9ca3af;
+        --white: #ffffff;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 6rem 0;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .section-header .line {
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+        box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    /* NAVIGÁCIÓ */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 13, 17, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 9999;
+        padding: 0.75rem 0;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .logo-img {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+        object-fit: cover;
+    }
+
+    .logo span {
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    /* HERO SZEKCIÓ */
+    .hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 8rem;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(180deg, rgba(11, 13, 17, 0.7) 0%, #0b0d11 100%);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+        padding: 0 2rem;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-glow);
+        color: var(--accent);
+        padding: 0.6rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 106, 0, 0.3);
+    }
+
+    .hero h1 {
+        font-size: 3.8rem;
+        font-weight: 900;
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    .highlight-text {
+        color: var(--accent);
+        text-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    .hero-sub {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        font-weight: 500;
+    }
+
+    .hero-sub i {
+        color: var(--accent);
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        transition: var(--transition);
+    }
+
+    .cta-btn.primary {
+        background: var(--accent);
+        color: #000;
+        box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .cta-btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(255, 106, 0, 0.5);
+    }
+
+    .cta-btn.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .cta-btn.secondary:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+    }
+
+    /* QUICK STATS */
+    .quick-stats {
+        background: rgba(20, 23, 31, 0.6);
+        padding: 3rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .stat-icon-wrapper {
+        font-size: 2rem;
+        color: var(--accent);
+        background: var(--accent-glow);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 106, 0, 0.2);
+    }
+
+    .stat-item h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-item p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    /* ABOUT SZEKCIÓ */
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .about-text p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    .warning-box {
+        background: rgba(255, 106, 0, 0.05);
+        border-left: 4px solid var(--accent);
+        padding: 1.75rem;
+        border-radius: 0 12px 12px 0;
+        margin: 2rem 0;
+    }
+
+    .warning-title {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .warning-box p {
+        color: var(--text-muted);
+        margin-bottom: 0;
+        font-size: 0.95rem;
+    }
+
+    /* SZOLGÁLTATÁSOK */
+    .service-grid-modern {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .s-card {
+        background: var(--bg-card);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.02);
+        transition: var(--transition);
+    }
+
+    .s-card:hover {
+        transform: translateY(-5px);
+        background: var(--bg-card-hover);
+        border-color: rgba(255, 106, 0, 0.2);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .s-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+    }
+
+    .s-card h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .s-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+
+    /* ÁRAK */
+    .prices-modern {
+        background: rgba(15, 18, 25, 0.5);
+    }
+
+    .date-badge {
+        display: inline-block;
+        font-size: 0.85rem;
+        background: rgba(255,255,255,0.08);
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        font-weight: 500;
+        margin-left: 1rem;
+        color: var(--text-muted);
+    }
+
+    .price-grid-modern {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .p-card {
+        background: var(--bg-card);
+        border-radius: 16px;
+        padding: 2.5rem 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+
+    .p-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .p-card.featured {
+        border: 2px solid var(--accent);
+        box-shadow: 0 10px 30px var(--accent-glow);
+        background: linear-gradient(180deg, #181c26 0%, #14171f 100%);
+    }
+
+    .p-badge {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent);
+        color: #000;
+        padding: 0.3rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .p-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .p-zone {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+
+    .p-amount {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 2rem;
+    }
+
+    .p-amount .from {
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        margin-left: 0.25rem;
+    }
+
+    .p-features {
+        list-style: none;
+        margin-top: auto;
+    }
+
+    .p-features li {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .p-features li i {
+        color: var(--accent);
+        margin-top: 0.25rem;
+    }
+
+    .p-card.additional-service {
+        background: rgba(20, 23, 31, 0.4);
+    }
+
+    .p-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+
+    .info-alert {
+        margin-top: 4rem;
+        background: var(--bg-card);
+        border: 1px solid rgba(255, 106, 0, 0.2);
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .alert-icon {
+        font-size: 1.7rem;
+        color: var(--accent);
+    }
+
+    /* SZAKTERÜLETEK */
+    .ev-box {
+        background: linear-gradient(135deg, #111a24 0%, #14171f 100%);
+        border: 1px solid rgba(255, 106, 0, 0.1);
+        padding: 3rem;
+        border-radius: 20px;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .ev-header {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .ev-icon {
+        font-size: 2.2rem;
+        color: var(--accent);
+        text-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .ev-box h3 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .german-japanese {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--text-muted);
+    }
+
+    .german-japanese i {
+        color: var(--accent);
+    }
+
+    /* VÉLEMÉNYEK */
+    .testimonials-modern {
+        background: rgba(20, 23, 31, 0.3);
+    }
+
+    .t-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .t-card {
+        background: var(--bg-card);
+        padding: 2.5rem;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .t-stars {
+        color: #ffb700;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .t-card p {
+        font-style: italic;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+    }
+
+    .t-card h4 {
+        font-weight: 700;
+        color: var(--white);
+    }
+
+    /* KAPCSOLAT & FORM */
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+    }
+
+    .c-info-box h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .c-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+    }
+
+    .contact-link-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: var(--transition);
+    }
+
+    .contact-link-item i {
+        width: 45px;
+        height: 45px;
+        background: var(--bg-card);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: var(--transition);
+    }
+
+    .contact-link-item:hover {
+        color: var(--accent);
+    }
+
+    .contact-link-item:hover i {
+        background: var(--accent);
+        color: #000;
+        transform: scale(1.05);
+    }
+
+    .c-form-box form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1.1rem;
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 8px;
+        color: var(--white);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem;
+        transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 15px rgba(255, 106, 0, 0.1);
+    }
+
+    .form-submit-btn {
+        width: 100%;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+    }
+
+    /* FOOTER */
+    .footer-modern {
+        background: #06070a;
+        padding: 2.5rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+        .about-content, .contact-wrapper {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        .hero h1 { font-size: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .hero h1 { font-size: 2.3rem; }
+        .hero-buttons { flex-direction: column; gap: 1rem; }
+        .info-alert { flex-direction: column; text-align: center; }
+        section { padding: 4rem 0; }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Navigáció -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <img src="518084437_122093025248959189_2202132677810798072_n.jpg" alt="Nézzük Át logó" class="logo-img">
+        <img src="logo-uj.png" alt="Nézzük Át logó" class="logo-img">
         <span>Nézzük Át!</span>
       </div>
       <ul class="nav-links">
@@ -21,44 +706,54 @@
         <li><a href="#services"><i class="fa-solid fa-screwdriver-wrench"></i> Szolgáltatások</a></li>
         <li><a href="#prices"><i class="fa-solid fa-calculator"></i> Árak</a></li>
         <li><a href="#expertise"><i class="fa-solid fa-charging-station"></i> Szakterületek</a></li>
+        <li><a href="#testimonials"><i class="fa-solid fa-comments"></i> Vélemények</a></li>
         <li><a href="#contact"><i class="fa-solid fa-phone"></i> Kapcsolat</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Hero szekció -->
   <header class="hero" style="background-image: url('hero-bg.jpg');">
     <div class="hero-bg-overlay"></div>
     <div class="hero-content">
-      <span class="badge"><i class="fa-solid fa-road"></i> 1 ÉVE AZ ÚTON AZ ÖNÖK BIZTONSÁGÁÉRT</span>
-      <h1>Használt autó? <br><span class="highlight-text">Nézzük át együtt!</span></h1>
-      <p class="hero-sub"><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győr és 50 km-es körzetében</p>
+      <span class="badge"><i class="fa-solid fa-road"></i> MÁR EGY ÉVE AZ ÖNÖK BIZTONSÁGÁÉRT AZ UTAKRA</span>
+      <h1>Használt autó vásárlás előtt állsz? <br><span class="highlight-text">Nézzük át alaposan!</span></h1>
+      <p class="hero-sub"><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győrben és 50 km-es körzetében segítek a helyszíni állapotfelmérésben.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="cta-btn primary">Időpontfoglalás <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="#contact" class="cta-btn primary">Időpont egyeztetés <i class="fa-solid fa-chevron-right"></i></a>
         <a href="#prices" class="cta-btn secondary">Árlista megtekintése</a>
       </div>
     </div>
   </header>
 
+  <!-- Statisztika / Gyors infók -->
   <section class="quick-stats">
     <div class="container stats-grid">
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-car-on"></i></div>
-        <h3>100% Mobilis</h3>
-        <p>Helyszíni vizsgálat ott, ahol az autó van</p>
+        <div>
+          <h3>Helyszíni vizsgálat</h3>
+          <p>Kereskedésbe vagy házhoz megyek.</p>
+        </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
-        <h3>EV & Hibrid</h3>
-        <p>Gyári szintű célszoftveres diagnosztika</p>
+        <div>
+          <h3>EV & Hibrid diagnosztika</h3>
+          <p>Műszeres cella- és szoftvervizsgálat.</p>
+        </div>
       </div>
       <div class="stat-item">
         <div class="stat-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Teljesen Független</h3>
-        <p>Nincs alku vagy összejátszás a kereskedővel</p>
+        <div>
+          <h3>Független szakértelem</h3>
+          <p>Kizárólag a Te érdekeidet képviselem.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Bemutatkozás -->
   <section id="about" class="section about">
     <div class="container">
       <div class="section-header">
@@ -67,50 +762,54 @@
       </div>
       <div class="about-content">
         <div class="about-image">
-          <img src="7250fb35-e33d-4951-95ee-4243715f02e9.png" alt="Professzionális autódiagnosztika folyamat közben">
+          <img src="varesz-diagnosztika.png" alt="Professzionális autódiagnosztika Varesz">
         </div>
         <div class="about-text">
-          <p>Pár éve egyre több ismerősnek, barátnak és munkatársnak segítettem jó autót venni – nem papíron jót, hanem valóban megbízhatót. Ebből a szenvedélyből és tapasztalatból született meg a <strong>Nézzük Át!</strong> gépjármű állapotfelmérés.</p>
+          <p>Pár éve még csak barátoknak és ismerősöknek segítettem a megfelelő használt autó kiválasztásában. Ebből a segítőkészségből és a járművek iránti elhivatottságból nőtte ki magát a <strong>Nézzük Át!</strong> szolgáltatás, amivel immár egy éve támogatom a tudatos autóvásárlókat.</p>
+          
+          <p>A célom egyszerű: szeretném, ha pontosan tudnád, mit készülsz megvásárolni. Nem az a feladatom, hogy mindenáron lebeszéljelek egy autóról, hanem az, hogy reális, tiszta képet adjak az állapotáról – a felszíni csillogás alatt is.</p>
+
           <div class="warning-box">
-            <div class="warning-title"><i class="fa-solid fa-triangle-exclamation"></i> A használtpiac egy aknamező</div>
-            <p>Visszatekert kilométerórák, eltitkolt és szakszerűtlenül javított karosszéria-törések, szoftveresen elnémított vagy maszkolt hibakódok. Én azért vagyok ott veled a kiszemelt jármű mellett, hogy az ne egy végtelen pénznyelő legyen, hanem egy valóban biztonságos partner.</p>
+            <div class="warning-title"><i class="fa-solid fa-circle-info"></i> Miért fontos a szakértő szem?</div>
+            <p>A modern használt autók összetett rendszerek. A rejtett karosszéria-javítások mellett a motorikus és elektronikus típushibák (kokszosodás a közvetlen befecskendezős benzineseknél, DPF telítettség a dízeleknél, vagy a hibrid akkumulátorok természetes elhasználódása) szabad szemmel nem láthatóak. Modern diagnosztikai eszközökkel és élő adatos elemzéssel segítek feltárni ezeket a kockázatokat, hogy a vásárlás után ne érjenek váratlan költségek.</p>
           </div>
-          <p>Minden egyes autót a legmodernebb digitális rétegvastagság-mérőkkel, élő adatos diagnosztikai szoftverekkel és mechanikai ellenőrzéssel vizsgálok át – pontosan úgy, mintha a saját családomnak vásárolnám.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Szolgáltatások -->
   <section id="services" class="section services-modern">
     <div class="container">
       <div class="section-header">
-        <h2>Szolgáltatások</h2>
+        <h2>Miben tudok neked segíteni?</h2>
         <div class="line"></div>
       </div>
       <div class="service-grid-modern">
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-          <h3>Teljes helyszíni átvizsgálás</h3>
-          <p>Karosszéria és alváz tüzetes ellenőrzése, rozsdakeresés, precíziós festékréteg-mérés. Motorhang, fékrendszer, futómű és gumiabroncsok felmérése. Élő adatos OBD diagnosztika és alapos, tesztút alatti vizsgálat.</p>
+          <h3>Helyszíni Állapotfelmérés</h3>
+          <p>A karosszéria tüzetes átvizsgálása, digitális rétegvastagság-mérés a korábbi sérülések feltérképezésére. Élő adatos OBD diagnosztika (üzemanyag-rendszer, koromszűrő, vezérlés állapot), a fékek és futómű vizuális ellenőrzése, valamint közös próbavezetés.</p>
         </div>
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-comments"></i></div>
-          <h3>Online hirdetés-előszűrés</h3>
-          <p>Bizonytalan vagy a kínálatban? Küldj át 2-3 hirdetéslinket! Részletesen átnézem a fotókat, rendszám alapján lekérdezem az elérhető előéletet, kiszűröm a gyanús jeleket, így megspórolom neked a felesleges utazást.</p>
+          <h3>Online Hirdetés-előszűrés</h3>
+          <p>Több autót is találtál az interneten, de bizonytalan vagy? Küldd át a linkeket! Segítek elemezni a képeket, az elérhető nyilvános adatok alapján ellenőrzöm az előéletet, és kiszűröm az intő jeleket, hogy elkerüld a felesleges utazásokat.</p>
         </div>
         <div class="s-card">
           <div class="s-icon"><i class="fa-solid fa-tags"></i></div>
-          <h3>Eladás előtti állapotfelmérés</h3>
-          <p>Ha te szeretnéd eladni a kocsidat, átvizsgálom, feltárom a javítandó apróságokat, hogy ne érjen meglepetés a vevő részéről. Segítek belőni a reális piaci árat, és értékes tippeket adok a hirdetés szövegéhez.</p>
+          <h3>Eladás Előtti Felmérés</h3>
+          <p>Ha te vagy az eladó, és szeretnéd tisztán látni a gépjárműved aktuális műszaki állapotát, átnézem a kocsidat. Így felkészülten, valós érvekkel és tiszta lelkiismerettel, a reális piaci áron tudod majd átadni a leendő vevőnek.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Árak -->
   <section id="prices" class="section prices-modern">
     <div class="container">
       <div class="section-header">
-        <h2>Árak <span class="date-badge">Érvényes: 2026.07.20-tól</span></h2>
+        <h2>Fix Árak – Rejtett Költségek Nélkül <span class="date-badge">Érvényes: 2026.07.20-tól</span></h2>
         <div class="line"></div>
       </div>
       
@@ -118,130 +817,160 @@
         <div class="p-card featured">
           <div class="p-badge">Legnépszerűbb</div>
           <h3>Átvizsgálás Zóna 0</h3>
-          <span class="p-zone">0–15 km (Gönyű és Győr)</span>
+          <span class="p-zone">0–15 km között (Gönyű központ és Győr)</span>
           <div class="p-amount">20 000 Ft</div>
           <ul class="p-features">
-            <li><i class="fa-solid fa-check"></i> Teljes digitális rétegvastagság-mérés</li>
-            <li><i class="fa-solid fa-check"></i> Élő adatos OBD diagnosztika és törlés</li>
-            <li><i class="fa-solid fa-check"></i> Mechanikai, futómű és fékrendszer csekk</li>
-            <li><i class="fa-solid fa-check"></i> Alapos próbakör és szakértői konzultáció</li>
+            <li><i class="fa-solid fa-check"></i> Digitális festékréteg-vastagság mérés</li>
+            <li><i class="fa-solid fa-check"></i> Részletes OBD hibakódolvasás és élő adat elemzés</li>
+            <li><i class="fa-solid fa-check"></i> Motortér, fékrendszer és futómű vizuális csekk</li>
+            <li><i class="fa-solid fa-check"></i> Próbakör és részletes helyszíni konzultáció</li>
           </ul>
         </div>
 
         <div class="p-card">
           <h3>Átvizsgálás Zóna 1</h3>
-          <span class="p-zone">15–30 km között</span>
+          <span class="p-zone">15–30 km között (Pl. Mezőörs, Pannonhalma, Lébény)</span>
           <div class="p-amount">25 000 Ft</div>
           <ul class="p-features">
-            <li><i class="fa-solid fa-check"></i> Pl. Mezőörs, Pannonhalma, Lébény</li>
-            <li><i class="fa-solid fa-check"></i> Teljes körű helyszíni komplex vizsgálat</li>
-            <li><i class="fa-solid fa-check"></i> OBD diagnosztika és festékréteg-mérés</li>
-            <li><i class="fa-solid fa-check"></i> Tesztút és részletes szóbeli értékelés</li>
+            <li><i class="fa-solid fa-check"></i> Teljes körű, helyszíni komplex vizsgálat</li>
+            <li><i class="fa-solid fa-check"></i> Minden diagnosztikai és fizikai mérés benne van</li>
+            <li><i class="fa-solid fa-check"></i> Szóbeli értékelés és tanácsadás a helyszínen</li>
           </ul>
         </div>
 
         <div class="p-card">
           <h3>Átvizsgálás Zóna 2</h3>
-          <span class="p-zone">30–50 km között</span>
+          <span class="p-zone">30–50 km között (Pl. Csorna, Mosonmagyaróvár, Pápa)</span>
           <div class="p-amount">30 000 Ft</div>
           <ul class="p-features">
-            <li><i class="fa-solid fa-check"></i> Pl. Csorna, Mosonmagyaróvár, Pápa</li>
-            <li><i class="fa-solid fa-check"></i> Teljes körű diagnosztikai és fizikai ellenőrzés</li>
-            <li><i class="fa-solid fa-check"></i> Karosszéria, motor, fék és elektronika teszt</li>
-            <li><i class="fa-solid fa-check"></i> Idő- és távolság-optimalizált fix ár</li>
+            <li><i class="fa-solid fa-check"></i> Teljes körű felmérés távolabbi településeken</li>
+            <li><i class="fa-solid fa-check"></i> Idő- és távolság-optimalizált fix árazás</li>
+            <li><i class="fa-solid fa-check"></i> Megbízás alapján egyedül is megnézem</li>
           </ul>
         </div>
 
         <div class="p-card">
           <h3>Átvizsgálás Zóna 3</h3>
-          <span class="p-zone">50 km felett</span>
+          <span class="p-zone">50 km felett (Veszprém megye és távolabbi régiók)</span>
           <div class="p-amount">35 000 Ft<span class="from">-tól</span></div>
           <ul class="p-features">
-            <li><i class="fa-solid fa-check"></i> Veszprém megye és távolabbi régiók</li>
-            <li><i class="fa-solid fa-check"></i> Egyedi, távolság alapú precíz kalkuláció</li>
-            <li><i class="fa-solid fa-check"></i> Maximális rugalmasság messze lévő autókhoz</li>
+            <li><i class="fa-solid fa-check"></i> Egyedi, távolság alapú kalkuláció</li>
+            <li><i class="fa-solid fa-check"></i> Rugalmas egyeztetés távolabb eső járművekhez</li>
           </ul>
         </div>
 
         <div class="p-card additional-service">
-          <h3>Online Tanácsadás</h3>
-          <span class="p-zone">Hirdetés előszűrés</span>
+          <h3>Online Hirdetésszűrés</h3>
+          <span class="p-zone">Segítség a választásban</span>
           <div class="p-amount">5 000 Ft</div>
-          <p class="p-desc">Beküldött linkek szakmai kiértékelése. Amennyiben később helyszíni vizsgálatot rendelsz tőlem, ez az összeg **teljesen levonásra kerül** a végösszegből!</p>
+          <p class="p-desc">Beküldött hirdetések szakmai kiértékelése. Amennyiben később helyszíni vizsgálatot kérsz tőlem, ez az összeg teljes egészében levonásra kerül a végösszegből.</p>
         </div>
 
         <div class="p-card additional-service">
           <h3>Eladás Előtti Felmérés</h3>
-          <span class="p-zone">Saját gépjármű felkészítése</span>
-          <div class="p-amount">15 000 - 20 000 Ft</div>
-          <p class="p-desc">Teljes körű állapotfelmérés eladás előtt hirdetési és reális piaci árképzési tanácsadással, a távolság függvényében.</p>
+          <span class="p-zone">Saját gépjármű átnézése</span>
+          <div class="p-amount">15 000 Ft-tól</div>
+          <p class="p-desc">Állapotfelmérés eladás előtt, értékesítési és árképzési tanácsadással a távolság függvényében (Győr és Gönyű területén fix 15 000 Ft).</p>
         </div>
 
         <div class="p-card additional-service">
-          <h3>OBD Diagnosztika</h3>
+          <h3>OBD Cél-Diagnosztika</h3>
           <span class="p-zone">Kizárólag hibakódolvasás</span>
           <div class="p-amount">5 000 / 10 000 Ft</div>
-          <p class="p-desc">Helyben, Gönyűn elvégezve: <strong>5 000 Ft</strong>.<br>Kiszállással Győrben és közvetlen vonzáskörzetében: <strong>10 000 Ft</strong>.</p>
+          <p class="p-desc">Helyben, Gönyűn elvégezve: **5 000 Ft**. <br>Kiszállással Győrben és közvetlen környezetében: **10 000 Ft**.</p>
         </div>
       </div>
 
       <div class="info-alert">
         <div class="alert-icon"><i class="fa-solid fa-car-burst"></i></div>
         <div class="alert-text">
-          <strong>Rugalmas rendszer autókereskedésekben:</strong> Ha a kiszemelt első autó nem felel meg az elvárásoknak, a helyszínen a többi jármű átnézése jelentős kedvezménnyel, kedvező óradíjas rendszerben történik!
+          <strong>Több autót is megnéznél ugyanott?</strong> Amennyiben a helyszínen kiderül, hogy az elsőként választott gépjármű nem felel meg az elvárásoknak, a többi ott található autó átvizsgálását kedvezményes, egyedi óradíjas rendszerben vállalom, hogy maximalizáljuk az utazás hatékonyságát.
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Szakterületek -->
   <section id="expertise" class="section expertise-modern">
     <div class="container">
       <div class="section-header">
-        <h2>Kiemelt Szakterületek</h2>
+        <h2>Milyen modellek terén számíthatsz rám?</h2>
         <div class="line"></div>
       </div>
       <div class="ev-box">
         <div class="ev-header">
           <div class="ev-icon"><i class="fa-solid fa-charging-station"></i></div>
-          <h3>EV & Hybrid Specialista</h3>
+          <h3>EV & Plug-In Hybrid Diagnosztika</h3>
         </div>
-        <p>Kiemelt szakmai tapasztalattal és specifikus diagnosztikai háttérrel rendelkezem az elektromos és plug-in hibrid rendszerek terén: <strong>Tesla (Model 3 LFP és Long Range modellek is), Toyota Prius generációk, Auris Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe</strong>.</p>
+        <p>Az elektromos és hibrid hajtásláncok speciális megközelítést igényelnek. Megfelelő szoftveres háttérrel rendelkezem a cellafeszültségek, a degradáció és az akkumulátor-menedzsment ellenőrzéséhez a legnépszerűbb típusoknál: **Tesla (Model 3 LFP és Long Range verziók is), Toyota Prius generációk, Auris és RAV4 Hybrid, Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe**.</p>
       </div>
-      <p class="german-japanese"><i class="fa-solid fa-circle-check"></i> Természetesen a hagyományos japán (Toyota, Mazda, Suzuki, Honda) és európai (VW csoport, Kia, Hyundai, Ford, francia modellek) benzines és dízel verzióit is gyári szintű pontossággal diagnosztizálom.</p>
+      <p class="german-japanese"><i class="fa-solid fa-circle-check"></i> **Hagyományos erőforrások:** Természetesen a klasszikus benzines és dízel modelleket is alaposan ismerem, legyen szó japán szívómotorokról (Toyota, Mazda, Suzuki, Honda) vagy az európai gyártók turbós, közvetlen befecskendezéses verzióiról (VW csoport TSI/TDI, BMW, Mercedes, Ford, Kia/Hyundai).</p>
     </div>
   </section>
 
-  <section class="section testimonials-modern">
+  <!-- Vélemények -->
+  <section id="testimonials" class="section testimonials-modern">
     <div class="container">
       <div class="section-header">
-        <h2>Ügyfeleink mondták</h2>
+        <h2>Ügyfeleink tapasztalatai</h2>
         <div class="line"></div>
       </div>
       <div class="t-grid">
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Varesz elképesztően profi módon átvizsgálta az autót, azonnal kiszúrta a rejtett hibákat és a korábbi javítás nyomait. Így sikerült egy valóban jó és biztonságos vételt találnom. Mindenkinek szívből ajánlom!"</p>
-          <h4>– Márk, Győr</h4>
+          <p>"Egy sérülésmentesnek hirdetett Golfot néztünk meg Győrben. Varesz a mérésnél azonnal kimutatta, hogy a jobb hátulja javítva és gittelve volt, ráadásul a szoftver kidobott egy korábbi övfeszítő hibát is. Nagyon hálás vagyok, hogy megkímélt egy rossz vételtől."</p>
+          <h4>– Gábor, Győr</h4>
         </div>
         <div class="t-card">
           <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Ha használt autót vásárolsz, mindenképp kérd az ő segítségét előtte. Olyan dolgokat is észrevett a rétegvastagság-mérésnél és a motor térben, amit én laikusként sosem láttam volna meg."</p>
+          <p>"Hibrid Prius vásárlása előtt kértem fel a vizsgálatra. Nagyon alaposan átnézte az akkucellákat és az élő adatokat, ami nekem laikusként teljesen kínai lett volna. Az ő megnyugtató szakvéleménye után vettem meg, azóta is hibátlan az autó."</p>
           <h4>– Anita, Mosonmagyaróvár</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Külföldről behozott autót szerettem volna venni. Varesz már az online szűrésnél felhívta a figyelmemet pár furcsaságra, a helyszínen pedig kiderült, hogy a valóságban jóval több kilométer volt a motorvezérlőben, mint az órán. Proffesszionális segítség!"</p>
+          <h4>– Péter, Csorna</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Használt Tesla vásárlásakor kértem segítséget. Nagyon korrektül elmagyarázta az akku állapotát, átnézte a futóművet, és kaptam tőle egy részletes képet a kocsi szoftveres hátteréről is. Nagyon közvetlen és felkészült szakember."</p>
+          <h4>– Roland, Sopron</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Első autómat vásároltam, és teljesen tanácstalan voltam a kereskedésben. Varesz higgadtan, lépésről lépésre átnézett mindent, elmagyarázta, mire kell figyelnem, és segített kiszűrni egy rejtett olajfolyásos modellt. Nagyon hálás vagyok a türelméért."</p>
+          <h4>– Dániel, Győr</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Családi egyterűt kerestünk a feleségemmel, messziről utaztunk Győrbe. Megkértük Varaszt, hogy nézze meg az autót még az érkezésünk előtt. Mire odaértünk, már kész szakvéleménnyel várt, ami alapján bátran és alkupozícióból tudtunk vásárolni."</p>
+          <h4>– Tamás, Pápa</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Korrekt, pontos és alapos. Nem kapkod, minden részletre (kárpitok alatti részek, gumiabroncsok kora, fékek állapota) figyel a diagnosztika mellett. Nekem sokat jelentett, hogy független szakértőként mondta el a véleményét."</p>
+          <h4>– Zoltán, Gönyű</h4>
+        </div>
+        <div class="t-card">
+          <div class="t-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Az eladás előtti felmérést kértem a saját autómra. Olyan apróbb hibákra világított rá, amiket gyorsan meg tudtam javíttatni a meghirdetés előtt, így a vevőjelölttel teljesen korrekt, vita nélküli adásvételt tudtunk kötni."</p>
+          <h4>– Krisztina, Győr</h4>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Kapcsolat -->
   <section id="contact" class="section contact-modern">
     <div class="container">
       <div class="section-header">
-        <h2>Kapcsolat & Időpontfoglalás</h2>
+        <h2>Egyeztessünk időpontot!</h2>
         <div class="line"></div>
       </div>
       <div class="contact-wrapper">
         <div class="c-info-box">
-          <h3>Keress bizalommal!</h3>
-          <p>Ne bízd a vakszerencsére az autóvásárlást. Hívj fel bátran, vagy küldj üzenetet, és egyeztetjük a részleteket!</p>
+          <h3>Keress bizalommal</h3>
+          <p>A piacon a jó állapotú autók gyorsan gazdára találnak. Ha megvan a kiszemelt jármű, hívj fel vagy írj üzenetet, és a lehető leggyorsabban egyeztetünk egy szabad időpontot a felmérésre.</p>
           <div class="c-links">
             <a href="tel:+36305804256" class="contact-link-item"><i class="fa-solid fa-phone"></i> +36 30 580 4256</a>
             <a href="mailto:vateravaresz@gmail.com" class="contact-link-item"><i class="fa-solid fa-envelope"></i> vateravaresz@gmail.com</a>
@@ -257,17 +986,18 @@
               <input type="email" name="email" placeholder="Email címed" required>
             </div>
             <div class="form-group">
-              <textarea name="message" rows="4" placeholder="Milyen autót néznénk meg, és hol található helyileg?" required></textarea>
+              <textarea name="message" rows="4" placeholder="Milyen autóról lenne szó, és hol/mikor lehetne megtekinteni?" required></textarea>
             </div>
-            <button type="submit" class="cta-btn primary form-submit-btn">Üzenet küldése <i class="fa-solid fa-paper-plane"></i></button>
+            <button type="submit" class="cta-btn primary form-submit-btn">Adatok küldése <i class="fa-solid fa-paper-plane"></i></button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer-modern">
-    <p>&copy; 2026 Nézzük Át! – Minden jog fenntartva. | Független Autóállapot-felmérés és Tanácsadás</p>
+    <p>&copy; 2026 Nézzük Át! – Minden jog fenntartva. | Független Gépjármű Állapotfelmérés és Vásárlási Tanácsadás</p>
   </footer>
 
 </body>
