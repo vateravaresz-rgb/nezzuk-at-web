@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nézzük Át! – Autóvásárlási tanácsadás</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Modern ikonok betöltése -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Header & Hero -->
@@ -16,23 +18,23 @@
         <span>Nézzük Át!</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#about">Bemutatkozás</a></li>
-        <li><a href="#services">Szolgáltatások</a></li>
-        <li><a href="#prices">Árak</a></li>
-        <li><a href="#contact">Kapcsolat</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user"></i> Bemutatkozás</a></li>
+        <li><a href="#services"><i class="fa-solid fa-gears"></i> Szolgáltatások</a></li>
+        <li><a href="#prices"><i class="fa-solid fa-tags"></i> Árak</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Kapcsolat</a></li>
       </ul>
     </nav>
     <div class="hero-content">
       <h1>Autóvásárlási tanácsadás<br>és helyszíni átvizsgálás</h1>
-      <p>Gönyű központtal, Győr és 50 km-es körzetben</p>
-      <a href="#contact" class="cta-btn">Foglalj időpontot</a>
+      <p class="hero-sub"><i class="fa-solid fa-location-dot"></i> Gönyű központtal, Győr és 50 km-es körzetben</p>
+      <a href="#contact" class="cta-btn">Foglalj időpontot <i class="fa-solid fa-calendar-days"></i></a>
     </div>
   </header>
 
   <!-- About Section -->
   <section id="about" class="section about">
     <div class="container">
-      <h2>Bemutatkozás</h2>
+      <h2><i class="fa-solid fa-circle-info"></i> Bemutatkozás</h2>
       <div class="about-content">
         <div class="about-image">
           <img src="7250fb35-e33d-4951-95ee-4243715f02e9.png" alt="Autó belső díszítőkép">
@@ -48,17 +50,20 @@
   <!-- Services Section -->
   <section id="services" class="section services">
     <div class="container">
-      <h2>Szolgáltatások</h2>
+      <h2><i class="fa-solid fa-screwdriver-wrench"></i> Szolgáltatások</h2>
       <div class="service-cards">
         <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <h3>Helyszíni átvizsgálás</h3>
           <p>Gönyű kiindulási ponttal Győr és 30–50 km-es körzetben. Megvizsgálom a karosszériát, alvázat, rozsdásodást, fényezést, motorhangot, gumikat, fékeket és az összes elektromos funkciót. OBD hibakódolvasás és próbaút, ha az eladó engedi.</p>
         </div>
         <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
           <h3>Online tanácsadás</h3>
           <p>Nem tudod, mit vegyél? Küldj 2–3 hirdetést, mondd el az igényeidet, és segítek megmondani, melyik éri meg. Megbízható benzines, dízel, hibrid vagy elektromos modellek ajánlása, típushibák, kerülendő motorok.</p>
         </div>
         <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-car-burst"></i></div>
           <h3>Eladás előtt is segítek</h3>
           <p>Felmérést végzek, hogy mit érdemes javítani, reális árat lövök be, tanácsot adok a hirdetési szöveghez és fotótippeket. Csomagkedvezmény több szolgáltatás igénybevétele esetén.</p>
         </div>
@@ -69,40 +74,88 @@
   <!-- Prices Section -->
   <section id="prices" class="section prices">
     <div class="container">
-      <h2>Árak (2026.07.20-tól)</h2>
-      <div class="price-list">
-        <div class="price-item">
-          <h4>Online tanácsadás</h4>
-          <p>5 000 Ft (levásárolható, ha utána helyszíni átvizsgálást kérsz)</p>
+      <h2><i class="fa-solid fa-hand-holding-dollar"></i> Árak (2026.07.20-tól, hétfőtől)</h2>
+      <div class="price-grid">
+        <div class="price-card highlight">
+          <div class="price-header">
+            <h4>Helyszíni átvizsgálás</h4>
+            <span class="location-tag">Alapdíj (0–15 km)</span>
+          </div>
+          <div class="amount">20 000 Ft</div>
+          <p>Gönyűn, Győrben és közvetlen vonzáskörzetében teljes körű diagnosztikával.</p>
         </div>
-        <div class="price-item">
-          <h4>Helyszíni átvizsgálás – Gönyűn, Győrben</h4>
-          <p>15 000 Ft</p>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>Átvizsgálás zóna 1</h4>
+            <span class="location-tag">15–30 km között</span>
+          </div>
+          <div class="amount">25 000 Ft</div>
+          <p>Pl. Mezőörs, Pannonhalma, Lébény és környező települések.</p>
         </div>
-        <div class="price-item">
-          <h4>Átvizsgálás 15–30 km-en belül</h4>
-          <p>17 000 Ft</p>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>Átvizsgálás zóna 2</h4>
+            <span class="location-tag">30–50 km között</span>
+          </div>
+          <div class="amount">30 000 Ft</div>
+          <p>Pl. Csorna, Mosonmagyaróvár, Pápa területei.</p>
         </div>
-        <div class="price-item">
-          <h4>Átvizsgálás 30–50 km körzetben</h4>
-          <p>19–22 000 Ft (távolság és idő függvényében)</p>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>Átvizsgálás zóna 3</h4>
+            <span class="location-tag">50 km felett</span>
+          </div>
+          <div class="amount">35 000 Ft-tól</div>
+          <p>Pl. Dudár és távolabbi címek egyedi kalkuláció alapján.</p>
         </div>
-        <div class="price-item">
-          <h4>Eladás előtti felmérés</h4>
-          <p>13 000–18 000 Ft (távolság szerint)</p>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>Online tanácsadás</h4>
+            <span class="location-tag">Hirdetés-előszűrés</span>
+          </div>
+          <div class="amount">5 000 Ft</div>
+          <p>Levásárolható, ha utána helyszíni átvizsgálást kérsz.</p>
         </div>
-        <div class="price-item">
-          <h4>OBD hibakódolvasás</h4>
-          <p>3 000 Ft Gönyűn; 5 000–7 000 Ft kiszállással</p>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>Eladás előtti felmérés</h4>
+            <span class="location-tag">Saját autó állapota</span>
+          </div>
+          <div class="amount">15 000 - 20 000 Ft</div>
+          <p>Távolság és felmérés helyszíne szerint változik.</p>
+        </div>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>OBD hibakódolvasás</h4>
+            <span class="location-tag">Helyben Gönyűn</span>
+          </div>
+          <div class="amount">5 000 Ft</div>
+          <p>Gyorsdiagnosztika és hibakód törlés kiszállás nélkül.</p>
+        </div>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h4>OBD diagnosztika</h4>
+            <span class="location-tag">Kiszállással</span>
+          </div>
+          <div class="amount">10 000 Ft</div>
+          <p>Kiszállással Győrben és közvetlen vonzáskörzetében.</p>
         </div>
       </div>
+      <p class="price-note"><i class="fa-solid fa-circle-exclamation"></i> <em>Rugalmas kereskedéses rendszer: Ha a kiszemelt autó nem felel meg, a helyszínen a többi autó átnézése kedvezményes áron történik!</em></p>
     </div>
   </section>
 
   <!-- Expertise Section -->
   <section class="section expertise">
     <div class="container">
-      <h2>Szakterületek</h2>
+      <h2><i class="fa-solid fa-charging-station"></i> Szakterületek</h2>
       <p>Különösen értek az elektromos és plug-in hibrid modellekhez (Opel Ampera, Hyundai Ioniq, Mitsubishi Outlander PHEV, Nissan Leaf, VW e-Up, Renault Zoe, Citroën C-Zero, Peugeot iOn, Toyota Prius, Auris Hybrid), valamint japán (Toyota, Mazda, Suzuki, Honda) és német/francia (VW, Skoda, Seat, Renault, Peugeot, Citroën, Ford, Kia) autókhoz.</p>
     </div>
   </section>
@@ -110,20 +163,20 @@
   <!-- Area Section -->
   <section class="section area">
     <div class="container">
-      <h2>Működési terület</h2>
-      <p>Gönyű, Győr, Győrszentiván, Nagyszentjános, Vámosszabadi, Mosonmagyaróvár, Komárom, Tata, Csorna, Pannonhalma – kb. 50 km-en belül, de egyedi megbeszélés alapján távolabb is!</p>
+      <h2><i class="fa-solid fa-map-location-dot"></i> Működési terület</h2>
+      <p>Gönyű, Győr, Győrszentiván, Nagyszentjános, Vámosszabadi, Mosonmagyaróvár, Komárom, Tata, Csorna, Pannonhalma, Pápa – alapvetően 50 km-en belül, de egyedi megbeszélés alapján távolabb is!</p>
     </div>
   </section>
 
   <!-- Why me Section -->
   <section class="section why">
     <div class="container">
-      <h2>Miért pont én?</h2>
-      <ul>
-        <li>Nem vagyok kereskedő – úgy nézem meg az autót, mintha magamnak venném.</li>
-        <li>Valódi tapasztalattal rendelkezem – ismerősöknek, munkatársaknak évek óta segítek.</li>
-        <li>Rálátásom van a jól és rosszul sikerült motorokra, típushibákra.</li>
-        <li>Nem ijesztgetek: megoldásokat keresek, nem csak hibát.</li>
+      <h2><i class="fa-solid fa-user-check"></i> Miért pont én?</h2>
+      <ul class="why-list">
+        <li><i class="fa-solid fa-shield-halved"></i> Nem vagyok kereskedő – úgy nézem meg az autót, mintha magamnak venném.</li>
+        <li><i class="fa-solid fa-business-time"></i> Valódi tapasztalattal rendelkezem – ismerősöknek, munkatársaknak évek óta segítek.</li>
+        <li><i class="fa-solid fa-triangle-exclamation"></i> Rálátásom van a jól és rosszul sikerült motorokra, típushibákra.</li>
+        <li><i class="fa-solid fa-handshake"></i> Nem ijesztgetek: megoldásokat keresek, nem csak hibát.</li>
       </ul>
     </div>
   </section>
@@ -131,19 +184,19 @@
   <!-- Testimonials Section -->
   <section class="section testimonials">
     <div class="container">
-      <h2>Vásárlói vélemények</h2>
+      <h2><i class="fa-solid fa-comments"></i> Vásárlói vélemények</h2>
       <div class="testimonial-cards">
         <div class="testimonial">
           <p>"Varesz profi módon átvizsgálta az autót, így sikerült jó vételt találnom. Mindenkinek ajánlom!"</p>
-          <span>– Márk, Győr</span>
+          <span><strong>– Márk, Győr</strong></span>
         </div>
         <div class="testimonial">
           <p>"Ha használt autót vásárolsz, mindenképp kérj tanácsot tőle. Rengeteg pénzt spóroltam."</p>
-          <span>– Anita, Mosonmagyaróvár</span>
+          <span><strong>– Anita, Mosonmagyaróvár</strong></span>
         </div>
         <div class="testimonial">
           <p>"Az online tanácsadás nagy segítség volt, így tudtam mire figyeljek. Professzionális és barátságos!"</p>
-          <span>– Gábor, Komárom</span>
+          <span><strong>– Gábor, Komárom</strong></span>
         </div>
       </div>
     </div>
@@ -152,7 +205,7 @@
   <!-- FAQ Section -->
   <section class="section faq">
     <div class="container">
-      <h2>Gyakori kérdések</h2>
+      <h2><i class="fa-solid fa-circle-question"></i> Gyakori kérdések</h2>
       <div class="faq-item">
         <h3>Mire kell figyelnem használt autó vásárlásakor?</h3>
         <p>Különösen ellenőrizd a karosszériát, az alváz rozsdásodását, a futómű állapotát, a kilométeróra valóságtartalmát és a szervizelőzményeket. Egy szakértővel mindig könnyebb kiszúrni a rejtett hibákat.</p>
@@ -171,20 +224,20 @@
   <!-- Contact Section -->
   <section id="contact" class="section contact">
     <div class="container">
-      <h2>Kapcsolat</h2>
+      <h2><i class="fa-solid fa-address-book"></i> Kapcsolat</h2>
       <p>Vedd fel velem a kapcsolatot időpontfoglalásért vagy további információért!</p>
       <div class="contact-info">
-        <p><strong>Telefon:</strong> <a href="tel:+36305804256">+36 30 580 4256</a></p>
-        <p><strong>Email:</strong> <a href="mailto:vateravaresz@gmail.com">vateravaresz@gmail.com</a></p>
-        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61578775670018" target="_blank">Nézzük Át – Facebook oldal</a></p>
-        <p><strong>Térkép:</strong> <a href="https://www.google.com/maps/place/Gönyű" target="_blank">Gönyű és környéke</a></p>
+        <p><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> <a href="tel:+36305804256">+36 30 580 4256</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:vateravaresz@gmail.com">vateravaresz@gmail.com</a></p>
+        <p><i class="fa-brands fa-facebook"></i> <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61578775670018" target="_blank">Nézzük Át – Facebook oldal</a></p>
+        <p><i class="fa-solid fa-map-pin"></i> <strong>Térkép:</strong> <a href="https://www.google.com/maps/place/Gönyű" target="_blank">Gönyű és környéke</a></p>
       </div>
       <div class="contact-form-container">
         <form class="contact-form" action="mailto:vateravaresz@gmail.com" method="post" enctype="text/plain">
           <input type="text" name="name" placeholder="Neved" required>
           <input type="email" name="email" placeholder="Email címed" required>
           <textarea name="message" rows="4" placeholder="Üzeneted" required></textarea>
-          <button type="submit">Üzenet küldése</button>
+          <button type="submit">Üzenet küldése <i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
@@ -193,7 +246,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Nézzük Át! Minden jog fenntartva.</p>
+      <p>&copy; 2026 Nézzük Át! Minden jog fenntartva.</p>
     </div>
   </footer>
 </body>
